@@ -1,0 +1,156 @@
+<script
+  type="application/json"
+  data-section-type="static-product"
+  data-section-id="{{ section.id }}"
+  data-section-data
+>
+  {
+    "product": {{ product | json }},
+    "productSettings": {
+      "addToCartText": {{ 'products.product.add_to_cart' | t | json }},
+      "enableHistory": true,
+      "imageZoom": {{ section.settings.image-zoom | json }},
+      "linkedOptions": true,
+      "soldOutText": {{ 'products.product.sold_out' | t | json }},
+      "thumbOrientation": {{ section.settings.thumb-orientation | json }},
+      "unavailableText": {{ 'products.product.unavailable' | t | json }}
+    }
+  }
+</script>
+
+<div class="content-area">
+  {% include 'breadcrumbs' %}
+</div>
+
+<div class="content content-area">
+  {%
+    include 'product',
+    fitting_guide_icon: section.settings.fitting-guide-icon,
+    fitting_guide_url: section.settings.fitting-guide-link,
+    lazy_load: true,
+    show_brand_names: settings.show-brand-names,
+    show_email_link: section.settings.product-email-link,
+    show_image_borders: settings.image-borders,
+    show_quantity: section.settings.product-quantity-option,
+    show_spb: section.settings.show_spb,
+    thumb_orientation: section.settings.thumb-orientation,
+    use_fullsize_viewer: section.settings.fullsize-product-viewer,
+    use_image_zoom: section.image-zoom
+  %}
+
+  {% if section.settings.related-products %}
+    {% include 'related-products' %}
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Product pages",
+  "class": "section-product",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "checkbox",
+      "id": "show-breadcrumbs",
+      "label": "Show breadcrumbs",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product-quantity-option",
+      "label": "Show quantity selector",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product-email-link",
+      "label": "Show email link",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_spb",
+      "label": "Show dynamic checkout button",
+      "info": "Lets customers check out directly using a familiar payment method. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "checkbox",
+      "id": "image-zoom",
+      "label": "Enable image zoom"
+    },
+    {
+      "type": "checkbox",
+      "id": "fullsize-product-viewer",
+      "label": "Enable image lightbox link",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "thumb-orientation",
+      "label": "Product thumbnail position",
+      "options": [
+        {
+          "value": "right",
+          "label": "Right of main image"
+        },
+        {
+          "value": "below",
+          "label": "Below main image"
+        },
+        {
+          "value": "list",
+          "label": "No thumbnails, display as list"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Related products"
+    },
+    {
+      "type": "checkbox",
+      "id": "related-products",
+      "label": "Enable related products",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Fitting guide"
+    },
+    {
+      "type": "page",
+      "id": "fitting-guide-link",
+      "label": "Page"
+    },
+    {
+      "type": "select",
+      "id": "fitting-guide-icon",
+      "label": "Fitting guide icon",
+      "options": [
+        {
+          "value": "k",
+          "label": "Shirt"
+        },
+        {
+          "value": "b",
+          "label": "Ruler"
+        },
+        {
+          "value": "d",
+          "label": "Info"
+        }
+      ],
+      "default": "k"
+    }
+  ]
+}
+
+{% endschema %}

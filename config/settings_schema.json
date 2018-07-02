@@ -1,0 +1,369 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Atlantic",
+    "theme_author": "Pixel Union",
+    "theme_version": "12.2.0",
+    "theme_documentation_url": "https:\/\/support.pixelunion.net\/category\/28-atlantic",
+    "theme_support_email": "support@pixelunion.net"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General"
+      },
+      {
+        "type": "color",
+        "id": "background-colour",
+        "label": "Background"
+      },
+      {
+        "type": "color",
+        "id": "primary-border-colour",
+        "label": "Border"
+      },
+      {
+        "type": "color",
+        "id": "text-colour",
+        "label": "Text"
+      },
+      {
+        "type": "color",
+        "id": "title-colour",
+        "label": "Heading"
+      },
+      {
+        "type": "color",
+        "id": "accent-colour",
+        "label": "Accent"
+      },
+      {
+        "type": "color",
+        "id": "accent-hover-colour",
+        "label": "Accent hover"
+      },
+      {
+        "type": "color",
+        "id": "button-text-colour",
+        "label": "Button text"
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "color",
+        "id": "logotype-link-colour",
+        "label": "Logo text"
+      },
+      {
+        "type": "color",
+        "id": "logotype-link-hover-colour",
+        "label": "Logo text hover"
+      },
+      {
+        "type": "color",
+        "id": "header-action-link-colour",
+        "label": "Header action links"
+      },
+      {
+        "type": "color",
+        "id": "header-action-link-hover-colour",
+        "label": "Header action links hover"
+      },
+      {
+        "type": "header",
+        "content": "Navigation"
+      },
+      {
+        "type": "color",
+        "id": "nav-link-colour",
+        "label": "Links"
+      },
+      {
+        "type": "color",
+        "id": "nav-link-hover-colour",
+        "label": "Links hover"
+      },
+      {
+        "type": "color",
+        "id": "nav-link-dropdown-colour",
+        "label": "Dropdown links",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "nav-background-colour",
+        "label": "Background"
+      },
+      {
+        "type": "color",
+        "id": "nav-border-colour",
+        "label": "Border"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Body text"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "header",
+        "content": "Headings"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_headings",
+        "label": "Font",
+        "default": "helvetica_n7"
+      },
+      {
+        "type": "checkbox",
+        "id": "font_headings_captialize",
+        "label": "Capitalize",
+        "default": false
+      },
+      {
+        "type": "font_picker",
+        "id": "font_headings_secondary",
+        "label": "Secondary font",
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "header",
+        "content": "Accent text"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_accent",
+        "label": "Font",
+        "default": "helvetica_n4"
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Icon",
+        "info": "16 x 16px .png required"
+      }
+    ]
+  },
+  {
+    "name": "Product grid",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General"
+      },
+      {
+        "type": "checkbox",
+        "id": "show-brand-names",
+        "label": "Show brand names \/ links",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Products"
+      },
+      {
+        "type": "checkbox",
+        "id": "image-borders",
+        "label": "Show product image borders",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "alt-product-card",
+        "label": "Enable product details overlay",
+        "default": false
+      },
+      {
+        "type": "select",
+        "id": "product_grid_aspect_ratio",
+        "label": "Product grid aspect ratio",
+        "options": [
+          {
+            "value": "default",
+            "label": "Default"
+          },
+          {
+            "value": "square",
+            "label": "Square"
+          },
+          {
+            "value": "tall",
+            "label": "Tall"
+          },
+          {
+            "value": "taller",
+            "label": "Taller"
+          },
+          {
+            "value": "wide",
+            "label": "Wide"
+          }
+        ],
+        "default": "default"
+      },
+      {
+        "type": "header",
+        "content": "Quick shop"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable-quick-shop",
+        "label": "Enable quick shop",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "quickshop-product-quantity-option",
+        "label": "Show quantity selector",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "quickshop-product-email-link",
+        "label": "Show email link",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "quickshop_show_spb",
+        "label": "Show dynamic checkout button",
+        "info": "Lets customers check out directly using a familiar payment method. [Learn more](https:\/\/help.shopify.com\/manual\/using-themes\/change-the-layout\/dynamic-checkout)",
+        "default": false
+      },
+      {
+        "type": "select",
+        "id": "quickshop-thumb-orientation",
+        "label": "Product thumbnail position",
+        "options": [
+          {
+            "value": "right",
+            "label": "Right of main image"
+          },
+          {
+            "value": "below",
+            "label": "Below main image"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "social_default_image",
+        "label": "Default social sharing image",
+        "info": "The image shown when sharing links from your store when a page-specific image isn't available"
+      },
+      {
+        "type": "text",
+        "id": "twitter-url",
+        "label": "Twitter",
+        "info": "http:\/\/twitter.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "facebook-url",
+        "label": "Facebook",
+        "info": "https:\/\/www.facebook.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "pinterest-url",
+        "label": "Pinterest",
+        "info": "https:\/\/www.pinterest.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "google-plus-url",
+        "label": "Google Plus",
+        "info": "https:\/\/plus.google.com\/+shopify"
+      },
+      {
+        "type": "text",
+        "id": "instagram-url",
+        "label": "Instagram",
+        "info": "https:\/\/instagram.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "tumblr-url",
+        "label": "Tumblr",
+        "info": "http:\/\/shopify.tumblr.com"
+      },
+      {
+        "type": "text",
+        "id": "youtube-url",
+        "label": "YouTube",
+        "info": "https:\/\/www.youtube.com\/user\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "vimeo-url",
+        "label": "Vimeo",
+        "info": "https:\/\/vimeo.com\/shopify"
+      }
+    ]
+  },
+  {
+    "name": "Currency converter",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show-currency-switcher",
+        "label": "Enable currency conversion",
+        "default": true,
+        "info": "Even though prices are displayed in different currencies, orders will still be processed in your store's currency."
+      },
+      {
+        "type": "select",
+        "id": "currency-switcher-format",
+        "label": "Format",
+        "options": [
+          {
+            "value": "money_format",
+            "label": "Without currency ($10.00)"
+          },
+          {
+            "value": "money_with_currency_format",
+            "label": "With currency ($10.00 CAD)"
+          }
+        ],
+        "default": "money_with_currency_format"
+      },
+      {
+        "type": "text",
+        "id": "currency-switcher-supported-currencies",
+        "label": "Supported currencies",
+        "default": "INR GBP CAD USD AUD EUR JPY",
+        "info": "Use the country's ISO [currency code](http:\/\/www.xe.com\/iso4217.php). Separate your currency codes with a space."
+      },
+      {
+        "type": "text",
+        "id": "currency-switcher-default",
+        "label": "Default currency",
+        "default": "USD"
+      }
+    ]
+  }
+]

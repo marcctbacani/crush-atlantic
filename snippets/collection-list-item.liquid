@@ -1,0 +1,40 @@
+<div class="collection-wrap first">
+
+  {% if collection-list-item == 'linklist' %}
+    {% assign collection = collections[link.handle] %}
+  {% endif %}
+
+  {% if collection.image %}
+    {% assign imgSrc = collection.image.src %}
+  {% else %}
+    {% assign imgSrc = collection.products.first.featured_image %}
+  {% endif %}
+
+  <div
+    class="collection"
+    {%
+      include 'rimg'
+      img: imgSrc,
+      size: '480x480',
+      crop: 'center',
+      background: true,
+      lazy: true
+    %}
+  >
+    {%
+      include 'rimg'
+      img: imgSrc,
+      size: '480x480',
+      crop: 'center',
+      lazy: true
+    %}
+
+    <a href="{{ collection.url }}">
+      <h2 class="label preload">{{ collection.title }}</h2>
+      <h2 class="browse">{{ 'collections.collection.browse' | t }}</h2>
+    </a>
+  </div>
+  <div class="rte clearfix">
+    {{ collection.description }}
+  </div>
+</div>

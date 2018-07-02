@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width" />
+
+  <title>
+    {{ page_title }}
+
+    {% if current_tags %}
+      &ndash; "{{ current_tags | join: ', ' }}"
+    {% endif %}
+
+    {% if current_page != 1 %}
+      &ndash; {{ 'general.pagination.seo_title' | t }} {{ current_page }}
+    {% endif %}
+
+    {% unless page_title contains shop.name %}
+      &ndash; {{ shop.name }}
+    {% endunless %}
+  </title>
+
+  {% if page_description or shop.description != blank %}
+    <meta name="description" content="{% if page_description %}{{ page_description }}{% else %}{{ shop.description }}{% endif %}">
+  {% endif %}
+
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {% if settings.favicon %}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '16x16' }}" type="image/png" />
+  {% endif %}
+  <link rel="canonical" href="{{ canonical_url }}" />
+
+  {%
+    include 'social-meta-tags',
+    twitter_handle: settings.twitter-url
+  %}
+
+  {{ content_for_header }}
+
+  <script>
+    document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,'js');
+    if(window.Shopify&&window.Shopify.designMode)document.documentElement.className+=' in-theme-editor';
+  </script>
+
+  {% include 'theme-options' %}
+</head>
+
+<body
+  class="
+    template-{{ template.name }}
+    product-grid-{{ settings.product_grid_aspect_ratio }}
+  "
+>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=187795038002910";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  {% include 'quickshop' %}
+
+  {% section 'pxs-announcement-bar' %}
+  {% section 'static-header' %}
+
+  <div class="page-body-content">
+    {{ content_for_layout }}
+  </div>
+
+  {% section 'static-footer' %}
+
+  <script
+    type="application/json"
+    data-scripts
+  >
+    {
+      "countries": {{ "/services/javascripts/countries.js" | json }},
+      "currencies": "//cdn.shopify.com/s/javascripts/currencies.js",
+      "customer_area": {{ "customer_area.js"  | shopify_asset_url | json }},
+      "jquery_api": {{ 'api.jquery.js' | shopify_asset_url | json }},
+      "jquery_cart": {{ "jquery.cart.min.js" | asset_url | json }},
+      "jquery_currencies": {{ "jquery.currencies.js" | asset_url | json }},
+      "plugins": {{ 'plugins.js' | asset_url | json }},
+      "qrcode": {{ 'vendor/qrcode.js' | shopify_asset_url | json }},
+      "shopify_common": {{ "shopify_common.js" | shopify_asset_url | json }}
+    }
+  </script>
+
+  {{ 'atlantic.js' | asset_url | script_tag }}
+
+  {% include 'structured-data' %}
+</body>
+</html>

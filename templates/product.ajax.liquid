@@ -1,0 +1,52 @@
+{% layout none %}
+
+{% assign product_json = product | json %}
+{% assign product_json_sha256 = product_json | sha256 %}
+
+{% capture settings_string %}
+  {{ settings.show-brand-names }}
+  {{ settings.quickshop-product-email-link }}
+  {{ settings.image-borders }}
+  {{ settings.quickshop-product-quantity-option }}
+  {{ settings.quickshop_show_spb }}
+  {{ settings.quickshop-thumb-orientation }}
+  {{ 'products.product.add_to_cart' | t }}
+  {{ 'products.product.sold_out' | t }},
+  {{ 'products.product.unavailable' | t }}
+{% endcapture %}
+{% assign settings_sha256 = settings_string | sha256 %}
+
+<template data-product-options>
+  {
+    "product": {{ product_json }},
+    "productSettings": {
+      "addToCartText": {{ 'products.product.add_to_cart' | t | json }},
+      "enableHistory": false,
+      "imageZoom": false,
+      "linkedOptions": true,
+      "soldOutText": {{ 'products.product.sold_out' | t | json }},
+      "thumbOrientation": {{ settings.quickshop-thumb-orientation | json }},
+      "unavailableText": {{ 'products.product.unavailable' | t | json }}
+    },
+    "product_sha256": {{ product_json_sha256 | json }},
+    "settings_sha256": {{ settings_sha256 | json }}
+  }
+</template>
+
+<template data-product-html>
+  {%
+    include 'product',
+    fitting_guide_icon: blank,
+    fitting_guide_url: blank,
+    lazy_load: false,
+    show_brand_names: settings.show-brand-names,
+    show_email_link: settings.quickshop-product-email-link,
+    show_image_borders: settings.image-borders,
+    show_quantity: settings.quickshop-product-quantity-option,
+    show_spb: settings.quickshop_show_spb,
+    thumb_orientation: settings.quickshop-thumb-orientation,
+    use_fullsize_viewer: false,
+    use_image_zoom: false,
+    quickshop: true
+  %}
+</template>

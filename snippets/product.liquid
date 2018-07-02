@@ -1,0 +1,418 @@
+{% assign fitting_guide_icon = fitting_guide_icon | default: blank %}
+{% assign fitting_guide_url = fitting_guide_url | default: blank %}
+{% assign lazy_load = lazy_load | default: false %}
+{% assign show_brand_names = show_brand_names | default: false %}
+{% assign show_email_link = show_email_link | default: false %}
+{% assign show_image_borders = show_image_borders | default: false %}
+{% assign show_quantity = show_quantity | default: false %}
+{% assign show_spb = show_spb | default: false %}
+{% assign thumb_orientation = thumb_orientation | default: blank %}
+{% assign use_fullsize_viewer = use_fullsize_viewer | default: false %}
+{% assign use_image_zoom = use_image_zoom | default: false %}
+
+{% assign selected_variant = product.selected_or_first_available_variant %}
+{% assign is_default = product.has_only_default_variant %}
+
+<section class="product-area clearfix">
+  <div class="mobile-product-title">
+    {% if show_brand_names %}
+      <h3 class="brand">{{ product.vendor }}</h3>
+    {% endif %}
+
+    <h2 class="title">{{ product.title }}</h2>
+
+    <p class="price sale">
+      {% if selected_variant.compare_at_price > selected_variant.price %}
+        <span class="original money">{{ selected_variant.compare_at_price | money }}</span>
+      {% endif %}
+
+      <span class="money">{{ selected_variant.price | money }}</span>
+    </p>
+
+    <div class="share-buttons">
+      <div class="share-wrap twitter">
+        <a
+          href="https://twitter.com/share"
+          class="twitter-share-button"
+          data-count="none"
+          data-text="{{ shop.name }} | {{ product.title }}:"
+          data-via="{{ settings.twitter-url | split: 'twitter.com/' | last }}"
+        >
+          Tweet
+        </a>
+      </div>
+
+      <div class="share-wrap google">
+        <div class="g-plusone" data-size="medium" data-annotation="none"></div>
+      </div>
+
+      <div class="share-wrap pinterest">
+        <a href="//pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}&amp;media={{ product.featured_image | product_img_url: 'original' }}&amp;description={{ product.title | escape }}" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+        <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+      </div>
+
+      <div class="share-wrap facebook">
+        <div
+          class="fb-like"
+          data-href="{{ shop.url }}{{ product.url }}"
+          data-send="false"
+          data-layout="button_count"
+          data-action="like"
+          data-size="small"
+          data-show-faces="false"
+          data-share="false"
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="showcase product-images">
+    {% if thumb_orientation == 'list' %}
+      {% for image in product.images %}
+        <div
+          class="
+            container
+            {% if product.images.size == 1 %}
+              wide
+            {% endif %}
+          "
+        >
+          <div class="product-main-image wrap">
+              <div class="image-list-item">
+                {%
+                  include 'rimg'
+                  img: image,
+                  size: '1024x1024',
+                  lazy: lazy_load
+                %}
+
+                {% if show_image_borders %}
+                  <span class="overlay"></span>
+                {% endif %}
+              </div>
+
+            {% if use_image_zoom %}
+              <div class="product-zoom"></div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div
+        class="
+          container
+          {% if product.images.size == 1 or thumb_orientation == 'below' %}
+            wide
+          {% endif %}
+        "
+      >
+        <div class="product-main-image wrap">
+          {% assign featured_image = selected_variant.image | default: product.featured_image %}
+
+          {%
+            include 'rimg'
+            img: featured_image,
+            size: '1024x1024',
+            lazy: lazy_load
+          %}
+
+          {% if show_image_borders %}
+            <span class="overlay"></span>
+          {% endif %}
+
+          {% if use_image_zoom %}
+            <div class="product-zoom"></div>
+          {% endif %}
+        </div>
+      </div>
+
+      {% if product.images.size > 1 %}
+        <div class="pager {% if thumb_orientation == 'below' %}below-main-image{% endif %}">
+          <div class="inner">
+            {% for image in product.images %}
+              <div class="wrap thumb {% include 'for-looper' %} {% if forloop.first %}active{% endif %}">
+                {% capture hi_res_attr %}
+                  data-high-res-url="{{ image.src | product_img_url: 'original' }}"
+                  data-image-id="{{ image.id }}"
+                {% endcapture %}
+
+                {%
+                  include 'rimg'
+                  img: image,
+                  size: '100x100',
+                  attr: hi_res_attr,
+                  lazy: lazy_load
+                %}
+
+                <span class="overlay"></span>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+
+    {% if use_fullsize_viewer %}
+      <div class="notes">
+        <a
+          href="#"
+          class="toggle-fullview"
+        >
+          <span class="icon">l</span>
+          {{ 'products.product.view_fullsize_image' | t }}
+        </a>
+      </div>
+    {% endif %}
+
+    {% if show_email_link %}
+      <div class="notes">
+        <a
+          href="mailto:{{ shop.email }}?Subject={{ product.title | escape }}"
+          class="email-us"
+        >
+          <span class="icon">j</span>
+          {{ 'products.product.email_us' | t }}
+        </a>
+      </div>
+    {% endif %}
+
+    {% if fitting_guide_url != blank %}
+      <div class="notes">
+        <a
+          href="{{ fitting_guide_url }}"
+          class="fitting-guide"
+        >
+          <span class="icon">{{ fitting_guide_icon }}</span>
+          {{ 'products.product.fitting_guide' | t }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="product-details-wrapper">
+    <div class="
+        product-details
+        {% if product.images.size > 1 %}
+          border
+        {% endif %}
+        {% if is_default and show_quantity == false %}
+          no-options
+        {% endif %}
+      "
+    >
+      <div class="module header">
+        {% if show_brand_names %}
+          <h3 class="brand">{{ product.vendor }}</h3>
+        {% endif %}
+
+        <h1 class="title">{{ product.title }}</h1>
+
+        <p class="price sale">
+          {% if selected_variant.compare_at_price > selected_variant.price %}
+            <span class="original money">{{ selected_variant.compare_at_price | money }}</span>
+          {% endif %}
+
+          <span class="money">{{ selected_variant.price | money }}</span>
+        </p>
+      </div>
+
+      <div class="module share-buttons">
+        <div class="share-wrap twitter">
+          <a
+            href="https://twitter.com/share"
+            class="twitter-share-button"
+            data-count="none"
+            data-text="{{ shop.name }} | {{ product.title }}:"
+            data-via="{{ settings.twitter-url | split: 'twitter.com/' | last }}"
+          >
+            Tweet
+          </a>
+        </div>
+
+        <div class="share-wrap google">
+          <div class="g-plusone" data-size="medium" data-annotation="none"></div>
+        </div>
+
+        <div class="share-wrap pinterest">
+          <a href="//pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}&media={{ product.featured_image | product_img_url: 'original' }}&description={{ product.title | escape }}" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+          <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+        </div>
+
+        <div class="share-wrap facebook">
+          <div
+            class="fb-like"
+            data-href="{{ shop.url }}{{ product.url }}"
+            data-send="false"
+            data-layout="button_count"
+            data-action="like"
+            data-size="small"
+            data-show-faces="false"
+            data-share="false"
+          >
+          </div>
+        </div>
+      </div>
+
+      <div class="module options {% unless product.available %}unavailable{% endunless %}">
+        {% assign form_id = product.id %}
+
+        {% if product.available %}
+          <div
+            class="
+              product-form
+              {% if show_spb %}
+                product-form-has-spb
+              {% endif %}
+              {% if selected_variant.available == false %}
+                product-form-outofstock
+              {% endif %}
+            "
+            data-product-form
+          >
+            {% form 'product', product, id: form_id %}
+              {% unless is_default %}
+                <div class="product-options">
+                  {% include 'product-options-dropdown' %}
+
+                  <div class="selector-wrapper no-js-required">
+                    <label for="product-select-{{ form_id }}"></label>
+                    <select
+                      class="product-select"
+                      name="id"
+                      id="product-select-{{ form_id }}"
+                      data-variants
+                    >
+                      {% for variant in product.variants %}
+                        {% if variant.available %}
+                          <option
+                            {% if variant.id == selected_variant.id %}
+                              selected="selected"
+                            {% endif %}
+                            value="{{ variant.id }}"
+                            data-variant-id="{{ variant.id }}"
+                          >
+                            {{ variant.title }} - {{ variant.price | money }}
+                          </option>
+                        {% else %}
+                          <option
+                            disabled="disabled"
+                            value="{{ variant.id }}"
+                            data-variant-id="{{ variant.id }}"
+                          >
+                            {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                          </option>
+                        {% endif %}
+                      {% endfor %}
+                    </select>
+                  </div>
+                </div>
+              {% else %}
+                <input
+                  class="product-select"
+                  name="id"
+                  value="{{ product.variants[0].id }}"
+                  type="hidden"
+                  data-variant-title="{{ product.variants[0].title }}"
+                />
+              {% endunless %}
+
+              <div id="infiniteoptions-container" class="side-labels"></div>
+              <div id="uploadery-container" class="side-labels"></div>
+
+              {% if show_quantity %}
+                <div class="selector-wrapper quantity">
+                  <label>{{ 'general.quantity' | t }}</label>
+                  <input
+                    type="text"
+                    class="product-quantity field"
+                    name="quantity"
+                    value="1"
+                  >
+                </div>
+              {% else %}
+                <input type="hidden" name="quantity" value="1">
+              {% endif %}
+
+              <div class="selector-wrapper product-submit-wrapper">
+                <input
+                  type="submit"
+                  class="action-button submit"
+                  value="{{ 'products.product.add_to_cart' | t }}"
+                >
+              </div>
+
+              {% if show_spb %}
+                {{ form | payment_button }}
+              {% endif %}
+            {% endform %}
+          </div>
+        {% else %}
+          <div class="product-form unavailable">
+            <span class="action-button unavailable disabled">{{ 'products.product.sold_out' | t }}</span>
+          </div>
+        {% endif %}
+      </div>
+
+      {% if product.description.size > 0 %}
+      <div class="module description">
+        <div class="rte">{{ product.description }}</div>
+      </div>
+      {% endif %}
+
+      {% if quickshop %}
+        <a class="go-to-product" href="{{ product.url | within: collection }}">
+          {{ 'products.product.visit_page' | t }}<span>→</span>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% if use_fullsize_viewer %}
+  <section class="fullscreen-product-viewer">
+    <div class="modal">
+      <div class="modal-wrap">
+        <span class="close">v</span>
+        <div class="showcase {% if product.images.size == 1 %}wide{% endif %}">
+          <div class="container">
+            <div class="wrap">
+              {%
+                include 'rimg'
+                img: product.featured_image,
+                size: '1024x1024',
+                lazy: lazy_load
+              %}
+
+              <span class="overlay"></span>
+            </div>
+          </div>
+        </div>
+
+        {% if product.images.size > 1 %}
+        <div class="pager antiscroll-wrap">
+          <div class="antiscroll-inner">
+            {% for image in product.images %}
+              <div class="wrap thumb {% include 'for-looper' %} {% if forloop.first %}active{% endif %}">
+                {% capture thumb_attr %}
+                  data-high-res-url="{{ image.src | product_img_url: 'original' }}"
+                {% endcapture %}
+
+                {%
+                  include 'rimg'
+                  img: image,
+                  size: '100x100',
+                  attr: thumb_attr,
+                  lazy: lazy_load
+                %}
+
+                <span class="overlay"></span>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}
