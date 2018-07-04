@@ -2,18 +2,18 @@
   "current": {
     "background-colour": "#ffffff",
     "primary-border-colour": "#dddddd",
-    "text-colour": "#666666",
-    "title-colour": "#222222",
-    "accent-colour": "#e72323",
-    "accent-hover-colour": "#222222",
+    "text-colour": "#434343",
+    "title-colour": "#999999",
+    "accent-colour": "#ffcf51",
+    "accent-hover-colour": "#101010",
     "button-text-colour": "#ffffff",
-    "logotype-link-colour": "#222222",
-    "logotype-link-hover-colour": "#222222",
-    "header-action-link-colour": "#bbbbbb",
-    "header-action-link-hover-colour": "#999999",
-    "nav-link-colour": "#666666",
-    "nav-link-hover-colour": "#222222",
-    "nav-link-dropdown-colour": "#666666",
+    "logotype-link-colour": "#101010",
+    "logotype-link-hover-colour": "#999999",
+    "header-action-link-colour": "#999999",
+    "header-action-link-hover-colour": "#101010",
+    "nav-link-colour": "#999999",
+    "nav-link-hover-colour": "#101010",
+    "nav-link-dropdown-colour": "#999999",
     "nav-background-colour": "#ffffff",
     "nav-border-colour": "#ffffff",
     "font_body": "lato_n3",
@@ -23,7 +23,7 @@
     "font_accent": "lato_n4",
     "favicon": "",
     "show-brand-names": true,
-    "image-borders": true,
+    "image-borders": false,
     "alt-product-card": true,
     "product_grid_aspect_ratio": "default",
     "enable-quick-shop": true,
@@ -80,7 +80,7 @@
           "logo-width": "400",
           "center-header": false,
           "header-format": "minimal",
-          "cart-icon": "cart",
+          "cart-icon": "bag",
           "menu": "main-menu",
           "meganav-limit-range": 6,
           "top-level-columns": "one-column"
@@ -139,7 +139,7 @@
         "type": "dynamic-collection",
         "settings": {
           "title": "Featured collection",
-          "border": true,
+          "border": false,
           "collection": "",
           "rows": 1,
           "products_per_row": 4
@@ -181,7 +181,7 @@
         "type": "dynamic-blog",
         "settings": {
           "title": "Blog posts",
-          "border": true,
+          "border": false,
           "blog": ""
         }
       },
@@ -229,6 +229,23 @@
         "type": "static-collection-list",
         "settings": {
           "show-breadcrumbs": true
+        }
+      },
+      "static-page": {
+        "type": "static-page",
+        "settings": {
+          "show-breadcrumbs": true,
+          "title": "",
+          "content": ""
+        }
+      },
+      "static-blog": {
+        "type": "static-blog",
+        "settings": {
+          "show-breadcrumbs": true,
+          "recent-posts": true,
+          "tag-list": false,
+          "pagination-style": "standard"
         }
       }
     },
