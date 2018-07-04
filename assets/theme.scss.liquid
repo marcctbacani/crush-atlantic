@@ -357,14 +357,20 @@ $content-width: 84%;
 $max-width: 1430px;
 $min-width: 290px;
 
-// Fonts
+//************************************************************************//
+// Typography
+//************************************************************************//
+
 $font-body: $font-body !default;
 $font-headings: $font-headings !default;
 $font-headings-capitalize: {{ settings.font_headings_captialize }};
 $font-headings-secondary: $font-headings-secondary !default;
 $font-accent: $font-accent !default;
 
+//************************************************************************//
 // Colors
+//************************************************************************//
+
 $background-color: {{ settings.background-colour }};
 
 $title-color: {{ settings.title-colour }};
@@ -1019,6 +1025,54 @@ $placeholders: '-webkit-input-placeholder',
        url('{{ "atlantic-icons.svg" | asset_url }}#atlantic-icons') format('svg');
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: "Larrseit";
+  src: url('{{ "Larrseit-Light.ttf" | asset_url }}');
+  src: url('{{ "Larrseit-Light.ttf" | asset_url }}') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Larrseit";
+  src: url('{{ "Larrseit.ttf" | asset_url }}');
+  src: url('{{ "Larrseit.ttf" | asset_url }}') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Albertus";
+  src: url('{{ "AlbertusNovaRegular.ttf" | asset_url }}');
+  src: url('{{ "AlbertusNovaRegular.ttf" | asset_url }}') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+// Typography
+// $font-body: "Larrseit", -apple-system, "Lato", "Avenir next", Avenir, Roboto, Noto, "Helvetica neue", Helvetica, Arial, sans-serif;
+// $font-headings: "Albertus";
+// $font-headings-capitalize: {{ settings.font_headings_captialize }};
+// $font-headings-secondary:  "Albertus";
+// $font-accent: $font-accent;
+
+// body {
+//   font-family: "Larrseit", sans-serif;
+//   font-weight: 400;
+//   color: $body-color;
+//   font-size: 16px;
+//   line-height: 1.625;
+//   -webkit-font-smoothing: antialiased;
+// }
+
+// h1 {
+//   font-family: "Albertus";
+//   font-weight: 400;
+// }
+
+// fix padding-right on li that has a dropdown
+#shopify-section-static-header > header > section > div > nav > ul > li.nav-item.dropdown > a {
+  padding-right: 15px;
 }
 
 .main-footer {
@@ -2419,8 +2473,6 @@ $navigation-border-hover: contrast($nav-background-color, 15%);
       @include ie10 { top: 27px; }
       @include lt-ie9 { top: 27px; }
     }
-
-
 
     .dropdown-wrap {
       position: absolute;
