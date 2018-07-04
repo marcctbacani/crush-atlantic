@@ -2419,15 +2419,18 @@ $navigation-border-hover: contrast($nav-background-color, 15%);
       @include lt-ie9 { top: 27px; }
     }
 
+
+
     .dropdown-wrap {
       position: absolute;
-      top: 100%;
+      top: 85%;
       left: -1px;
       z-index: 1000;
       display: none;
-      width: 198px;
+      width: 150px;
       background-color: $nav-background-color;
-      border: 1px solid $navigation-border-hover;
+      // border: 1px solid $navigation-border-hover;
+      > li:last-child { padding-bottom: 10px; }
 
       .main-header--minimal & { left: 0; }
 
@@ -2460,7 +2463,7 @@ $navigation-border-hover: contrast($nav-background-color, 15%);
       .dropdown-item a {
         @include font($font-body);
         display: block;
-        padding: 23px 42px 23px 26px;
+        padding: 10px 15px;
         font-size: 14px;
         border-top: 1px solid $navigation-border;
 
