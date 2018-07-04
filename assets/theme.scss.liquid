@@ -1917,6 +1917,12 @@ mark {
     color: $logo-link-color;
     &:hover { color: $logo-link-color-hover; }
   }
+
+  svg {
+    display: inline-block;
+    fill: $logo-link-color;
+    &:hover { fill: $logo-link-color-hover; }
+  }
 }
 
 // Header tools
@@ -2217,14 +2223,14 @@ mark {
     color: black;
   }
 
-  svg { 
+  svg {
     width: 55px;
     height: 55px;
-    padding: 15px; 
+    padding: 15px;
     vertical-align: middle;
     background-color: $background-color;
     color: $text-color;
-    border-radius: 50%; 
+    border-radius: 50%;
   }
 
   .sidebar-enabled & {
@@ -3319,7 +3325,7 @@ table.mobile-layout {
 
   .template-collection & { padding: 0; }
 
-  .sep { 
+  .sep {
     padding-left: 4px;
     padding-right: 4px;
   }
@@ -3333,7 +3339,7 @@ table.mobile-layout {
     margin-left: -30px;
     font-size: 0;
 
-    @include breakpoint(small) { 
+    @include breakpoint(small) {
       padding-top:10px;
       margin-left: 0;
     }
@@ -3449,7 +3455,7 @@ table.mobile-layout {
 
 .collection-title-header {
   background-size: cover;
-  padding-top: 0; 
+  padding-top: 0;
 
   .collection-title {
     text-align: center;
@@ -3462,13 +3468,13 @@ table.mobile-layout {
 
   &.page-title {
     // Fallback styles incase image fails to load
-    min-height: 200px; 
+    min-height: 200px;
     overflow: hidden;
   }
 }
 
 .collection-header .breadcrumb-navigation {
-  text-align: center; 
+  text-align: center;
 }
 
 .picture-block {
@@ -5055,7 +5061,7 @@ img {
         border-top:none;
 
         &.first { border-top: 1px solid $primary-border-color; }
-        &:before { 
+        &:before {
           display: inline-block;
           vertical-align: top;
         }
@@ -10068,4 +10074,3 @@ $pxs-map-heading-margin: 26px !default;
   text-align: center;
   color: $title-color;
 }
-
