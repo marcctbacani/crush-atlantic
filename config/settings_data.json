@@ -22,7 +22,7 @@
     "font_headings_secondary": "lato_n4",
     "font_accent": "lato_n4",
     "favicon": "",
-    "show-brand-names": true,
+    "show-brand-names": false,
     "image-borders": false,
     "alt-product-card": true,
     "product_grid_aspect_ratio": "default",
@@ -104,24 +104,24 @@
             "type": "feature",
             "settings": {
               "inverted": false,
-              "image": "",
+              "image": "shopify:\/\/shop_images\/012e9bb2-a427-11e7-84b5-dfc1701cb40c_1280x720_163503.jpg",
               "slide_title": "Slideshow",
               "caption": "Introduce customers to your shop with lifestyle imagery and product photography.",
               "button": "Your call to action button",
               "link": "https:\/\/themes.shopify.com\/themes\/atlantic\/styles\/light",
-              "alignment": "center bottom"
+              "alignment": "left bottom"
             }
           },
           "dynamic-slideshow-block-two": {
             "type": "feature",
             "settings": {
               "inverted": false,
-              "image": "",
+              "image": "shopify:\/\/shop_images\/AroundCOS3-1440.jpg",
               "slide_title": "Slideshow",
               "caption": "Introduce customers to your shop with lifestyle imagery and product photography.",
               "button": "Your call to action button",
               "link": "https:\/\/themes.shopify.com\/themes\/atlantic\/styles\/light",
-              "alignment": "center bottom"
+              "alignment": "left bottom"
             }
           }
         },
@@ -246,6 +246,21 @@
           "recent-posts": true,
           "tag-list": false,
           "pagination-style": "standard"
+        }
+      },
+      "static-product": {
+        "type": "static-product",
+        "settings": {
+          "show-breadcrumbs": false,
+          "product-quantity-option": true,
+          "product-email-link": false,
+          "show_spb": false,
+          "image-zoom": false,
+          "fullsize-product-viewer": true,
+          "thumb-orientation": "below",
+          "related-products": true,
+          "fitting-guide-link": "fitting-guide",
+          "fitting-guide-icon": "k"
         }
       }
     },
