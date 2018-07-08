@@ -46,6 +46,8 @@
   </ul>
 
   <div class="sub-footer">
+
+  {% comment %}
     {% if linklists.footer.links.size > 0 %}
     <nav class="footer-nav">
       <ul>
@@ -55,6 +57,8 @@
       </ul>
     </nav>
     {% endif %}
+  {% endcomment %}
+  
     <p>{{ 'layout.footer.copyright_credit_html' | t }} {{ powered_by_link }}.</p>
 
     {% include 'footer-payments' %}
