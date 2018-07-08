@@ -1049,9 +1049,51 @@ $placeholders: '-webkit-input-placeholder',
   font-style: normal;
 }
 
+
+@font-face {
+  font-family: "ET Book";
+  src: url('{{ "et-book-roman-line-figures.eot" | asset_url }}');
+  src: url('{{ "et-book-roman-line-figures.eot?#iefix" | asset_url }}') format("embedded-opentype"),
+       url('{{ "et-book-roman-line-figures.woff" | asset_url }}') format("woff"),
+       url('{{ "et-book-roman-line-figures.ttf" | asset_url }}') format("truetype"),
+       url('{{ "et-book-roman-line-figures.svg#etbookromanosf" | asset_url }}') format("svg");
+  font-weight: 400;
+  font-style: normal
+}
+
+@font-face {
+  font-family: "ET Book";
+  src: url('{{ "et-book-display-italic-old-style-figures.eot" | asset_url }}');
+  src: url('{{ "et-book-display-italic-old-style-figures.eot?#iefix" | asset_url }}') format("embedded-opentype"),
+       url('{{ "et-book-display-italic-old-style-figures.woff" | asset_url }}') format("woff"),
+       url('{{ "et-book-display-italic-old-style-figures.ttf" | asset_url }}') format("truetype"),
+       url('{{ "et-book-display-italic-old-style-figures.svg#etbookromanosf" | asset_url }}') format("svg");
+  font-weight: 400;
+  font-style: italic
+}
+
+@font-face {
+  font-family: "ET Book";
+  src: url('{{ "et-book-bold-line-figures.eot" | asset_url }}');
+  src: url('{{ "et-book-bold-line-figures.eot?#iefix" | asset_url }}') format("embedded-opentype"),
+       url('{{ "et-book-bold-line-figures.woff" | asset_url }}') format("woff"),
+       url('{{ "et-book-bold-line-figures.ttf" | asset_url }}') format("truetype"),
+       url('{{ "et-book-bold-line-figures.svg#etbookromanosf" | asset_url }}') format("svg");
+  font-weight: 700;
+  font-style: normal
+}
+
 #shopify-section-dynamic-slideshow > section {
   margin: 0 !important;
 }
+
+body {
+  h2 {
+    // font-family: "ET Book";
+  }
+}
+
+// $font-body: "ET Book";
 
 // Typography
 // $font-body: "Larrseit", -apple-system, "Lato", "Avenir next", Avenir, Roboto, Noto, "Helvetica neue", Helvetica, Arial, sans-serif;
@@ -5408,6 +5450,8 @@ img {
 
 }
 
+
+
 /* Both blog and article template */
 .template-blog, .template-article {
 
@@ -5424,6 +5468,10 @@ img {
     float:left;
     width:75%;
     padding-right:3%;
+    p, li {
+      font-size: 18px;
+      line-height: 30px;
+    }
 
     @include breakpoint(small) {
       width:100%;
