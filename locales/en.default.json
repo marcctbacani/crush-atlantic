@@ -3,8 +3,8 @@
     "404": {
       "title": "Page not found",
       "home_link": "homepage",
-      "subtext_html": "We're sorry, but the page you're looking for could not be found.",
-      "subtext_collection_html": "We're sorry, but the page you're looking for could not be found. Go back to our {{ link }}, or check out some of our favourite items below:"
+      "subtext_html": "Bummer :( the page you’re looking for could not be found.",
+      "subtext_collection_html": "We're sorry, but the page you’re looking for could not be found. Go back to our {{ link }}, or check out some of our favourite items below:"
     },
     "account": "Account",
     "name": "Name",
@@ -50,7 +50,7 @@
       "video-play": "Play Video"
     },
     "password_page": {
-      "opening_soon": "Opening Soon",
+      "opening_soon": "We’re opening soon",
       "spread_the_word": "Spread the word:",
       "login_form_heading": "Enter store using password",
       "login_form_password_label": "Your password:",
@@ -101,10 +101,10 @@
     },
     "footer": {
       "contact_title": "Get in touch",
-      "social_title": "Follow us out there",
-      "newsletter_title": "Newsletter",
+      "social_title": "Follow life at Crush",
+      "newsletter_title": "Read our Featured Stories",
       "email": "Email address",
-      "copyright_credit_html": "<a href=\"https:\/\/www.pixelunion.net\/themes\/atlantic-shopify-theme\/\">Atlantic Theme<\/a> by <a href=\"https:\/\/www.pixelunion.net\/\">Pixel Union<\/a>."
+      "copyright_credit_html": "Copyright © 2018 Crush Collection | <a href=\"https:\/\/crush-c.myshopify.com\/privacy\">Privacy | "
     }
   },
   "blogs": {

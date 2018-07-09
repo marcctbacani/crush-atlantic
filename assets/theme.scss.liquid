@@ -876,7 +876,7 @@ $placeholders: '-webkit-input-placeholder',
 .section-title {
   @include font($font-headings-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   text-align: center;
   margin:0 0 45px;
   padding:45px 0 0;
@@ -1049,6 +1049,52 @@ $placeholders: '-webkit-input-placeholder',
   font-style: normal;
 }
 
+
+@font-face {
+  font-family: "ET Book";
+  src: url('{{ "et-book-roman-line-figures.eot" | asset_url }}');
+  src: url('{{ "et-book-roman-line-figures.eot?#iefix" | asset_url }}') format("embedded-opentype"),
+       url('{{ "et-book-roman-line-figures.woff" | asset_url }}') format("woff"),
+       url('{{ "et-book-roman-line-figures.ttf" | asset_url }}') format("truetype"),
+       url('{{ "et-book-roman-line-figures.svg#etbookromanosf" | asset_url }}') format("svg");
+  font-weight: 400;
+  font-style: normal
+}
+
+@font-face {
+  font-family: "ET Book";
+  src: url('{{ "et-book-display-italic-old-style-figures.eot" | asset_url }}');
+  src: url('{{ "et-book-display-italic-old-style-figures.eot?#iefix" | asset_url }}') format("embedded-opentype"),
+       url('{{ "et-book-display-italic-old-style-figures.woff" | asset_url }}') format("woff"),
+       url('{{ "et-book-display-italic-old-style-figures.ttf" | asset_url }}') format("truetype"),
+       url('{{ "et-book-display-italic-old-style-figures.svg#etbookromanosf" | asset_url }}') format("svg");
+  font-weight: 400;
+  font-style: italic
+}
+
+@font-face {
+  font-family: "ET Book";
+  src: url('{{ "et-book-bold-line-figures.eot" | asset_url }}');
+  src: url('{{ "et-book-bold-line-figures.eot?#iefix" | asset_url }}') format("embedded-opentype"),
+       url('{{ "et-book-bold-line-figures.woff" | asset_url }}') format("woff"),
+       url('{{ "et-book-bold-line-figures.ttf" | asset_url }}') format("truetype"),
+       url('{{ "et-book-bold-line-figures.svg#etbookromanosf" | asset_url }}') format("svg");
+  font-weight: 700;
+  font-style: normal
+}
+
+#shopify-section-dynamic-slideshow > section {
+  margin: 0 !important;
+}
+
+body {
+  h2 {
+    // font-family: "ET Book";
+  }
+}
+
+// $font-body: "ET Book";
+
 // Typography
 // $font-body: "Larrseit", -apple-system, "Lato", "Avenir next", Avenir, Roboto, Noto, "Helvetica neue", Helvetica, Arial, sans-serif;
 // $font-headings: "Albertus";
@@ -1077,7 +1123,7 @@ $placeholders: '-webkit-input-placeholder',
 
 .main-footer {
   padding:0 15px;
-  margin-top: 65px;
+  margin-top: 24px;
 
   .footer-message,
   .email {
@@ -1246,7 +1292,7 @@ $placeholders: '-webkit-input-placeholder',
 
   .sub-footer {
     @include font($font-headings-secondary);
-    margin:40px 0;
+    margin:20px 0;
     font-size:12px;
     color: $theme-detail-link-color;
 
@@ -1281,8 +1327,8 @@ $placeholders: '-webkit-input-placeholder',
     }
 
     p {
-      text-align: center;
-      margin:50px 0 30px;
+      text-align: left;
+      margin: 0;
 
       @media screen and (max-width: 910px) {
         display: inline-block;
@@ -1867,7 +1913,7 @@ mark {
   .store-title,
   .main-header--tools {
     display: table-cell;
-    padding: 30px 0;
+    padding: 15px 0;
     vertical-align: middle;
 
     .main-header--centered & {
@@ -1878,20 +1924,16 @@ mark {
   nav.full {
     width: 100%;
     text-align: center;
-
     &.bordered {
       border: 0;
     }
-
     @media screen and (max-width: 1200px) {
       display: none;
     }
-
     ul {
       text-align: left;
       white-space: normal;
     }
-
     .nav-item .label:before { display: none; }
   }
 
@@ -1899,7 +1941,6 @@ mark {
     @media screen and (max-width: 1200px) {
       display: none;
     }
-
     .main-header--centered & {
       width: 30%;
 
@@ -3481,7 +3522,7 @@ table.mobile-layout {
 
       @if $font-headings-capitalize {
         font-size: calc(21px * 0.875) !important;
-        text-transform: uppercase;
+        text-transform: capitalize;
       }
 
       &.preload { visibility:hidden; }
@@ -3908,7 +3949,7 @@ table.mobile-layout {
     margin:10px 0 0;
 
     @if $font-headings-capitalize {
-      text-transform: uppercase;
+      text-transform: capitalize;
     }
 
     a {
@@ -4075,7 +4116,7 @@ html {
       letter-spacing: 0.1em;
       color: $button-text-color;
       background-color: $accent-color;
-      text-transform: uppercase;
+      text-transform: capitalize;
       cursor: pointer;
       border-radius: 4px;
       display: inline-block;
@@ -5171,7 +5212,7 @@ img {
 
       @if $font-headings-capitalize {
         font-size: calc(14px * 0.875) !important;
-        text-transform: uppercase;
+        text-transform: capitalize;
       }
     }
 
@@ -5283,7 +5324,7 @@ img {
 
       @if $font-headings-capitalize {
         font-size: calc(14px * 0.875) !important;
-        text-transform: uppercase;
+        text-transform: capitalize;
       }
 
       .default {
@@ -5409,6 +5450,8 @@ img {
 
 }
 
+
+
 /* Both blog and article template */
 .template-blog, .template-article {
 
@@ -5425,6 +5468,10 @@ img {
     float:left;
     width:75%;
     padding-right:3%;
+    p, li {
+      font-size: 18px;
+      line-height: 30px;
+    }
 
     @include breakpoint(small) {
       width:100%;
@@ -5735,7 +5782,7 @@ img {
 
           @if $font-headings-capitalize {
             font-size: calc(28px * 0.875) !important;
-            text-transform: uppercase;
+            text-transform: capitalize;
           }
         }
 
@@ -6544,7 +6591,7 @@ img {
   margin-bottom: 1em;
   font-size: 1em;
   font-weight: font-weight($font-headings, $font-weight: lighter);
-  text-transform: uppercase;
+  text-transform: capitalize;
 
   &:not(:first-child) {
     margin-top: 3em;
@@ -6558,7 +6605,7 @@ img {
   .btn {
     background-color: #58686f;
     color: #fff;
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 0.1em;
     padding: 1.5em;
     font-size: 0.875em;
@@ -7019,23 +7066,22 @@ img {
 
   .action-link {
     font-size: 0.875em;
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 0.2em;
     color: #bfbfbf;
     margin-top: 1.75em;
     position: absolute;
     left: 1.25em;
     top: 1.25em;
-
+    transition-duration: 0.2s;
+    transition-property: color;
     &:hover {
       color: #999;
-
       .ico-16 {
         opacity: 0.4;
       }
     }
   }
-
   .ico-16 {
     display: inline-block;
     vertical-align: baseline;
@@ -7751,7 +7797,7 @@ img {
 .home-section {
   position: relative;
   padding-top: 65px;
-  margin-top: 65px;
+  margin-top: 24px;
 
   .slideshow-sibling-section & {
     margin-top: 0;
@@ -7762,7 +7808,7 @@ img {
   }
 
   &.has-heading {
-    padding-top: 50px;
+    padding: 50px;
   }
 
   &.has-border {
@@ -7808,7 +7854,7 @@ img {
       margin-top: 0;
 
       &.slideshow.content-area {
-        margin-top: 65px;
+        margin-top: 24px;
 
         @include breakpoint(small) {
           margin-top: 0;
@@ -7855,7 +7901,7 @@ img {
   &::after {
     display: block;
     width: 100%;
-    padding-bottom: 100%;
+    padding-bottom: 50%;
     background-image: inherit;
     background-position: center;
     background-size: cover;
