@@ -91,7 +91,7 @@
         "settings": {
           "footer-message-title": "",
           "footer-message": "",
-          "footer-mailing-list": false,
+          "footer-mailing-list": true,
           "footer-payment-options": true,
           "footer-alternate": false,
           "footer-secondary-menu": ""
@@ -246,6 +246,7 @@
           "recent-posts": true,
           "tag-list": true
         }
+<<<<<<< HEAD
       },
       "1531272513458": {
         "type": "dynamic-richtext",
@@ -275,6 +276,8 @@
           "desktop_alignment": "left",
           "mobile_alignment": "bottom"
         }
+=======
+>>>>>>> 56fad28c4450ee675b878a2a55ce92dee884c5bb
       }
     },
     "content_for_index": [
