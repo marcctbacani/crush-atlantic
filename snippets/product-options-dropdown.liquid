@@ -1,7 +1,7 @@
-{% for option in product.options_with_values %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% for option in product.options_with_values %}
   {% assign option_index = forloop.index %}
   {%- capture option_id -%}
-    single-option-{{ form_id }}-{{ option_index }}
+    <ly-as-9617200>single-option-</ly-as-9617200>{{ form_id }}-{{ option_index }}
   {%- endcapture -%}
 
   <div class="inline-field-wrapper js-required">

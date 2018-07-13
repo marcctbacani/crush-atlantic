@@ -1,4 +1,4 @@
-{% assign number_of_related_products_to_show = 4 %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% assign number_of_related_products_to_show = 4 %}
 {% assign image_size = 'medium' %}
 {% capture number_of_related_products_to_fetch %}{{ number_of_related_products_to_show | plus: 1 }}{% endcapture %}
 
@@ -14,7 +14,7 @@
 
 {% if collection.products.size > 1 %}
   <section class="related-products">
-    <h2 class="section-title section-border">{{ 'products.related_products.header' | t }}</h2>
+    <h2 class="section-title section-border">{% comment %}ly_i18n_replace_for_[ 'products.related_products.header' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.related_products.header' | t }}{% endcapture %}{% include 'ly-static-string' with '9617223' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h2>
     <ul class="product-list">
       {% assign current_product_found = false %}
       {% for prod in collection.products limit: number_of_related_products_to_fetch %}

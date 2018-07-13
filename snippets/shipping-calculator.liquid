@@ -1,4 +1,4 @@
-{% assign default_country = '' %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% assign default_country = '' %}
 {% assign default_province = '' %}
 {% assign default_zip = '' %}
 
@@ -24,16 +24,16 @@
 
   <div class="wrapper-setup">
     <p>
-      <label for="address_country">{{ 'customer.addresses.country' | t }}</label><select class="styled-select address-country" id="address_country" name="address[country]" data-default="{{ default_country }}">{{ country_option_tags }}</select>
+      <label for="address_country">{% comment %}ly_i18n_replace_for_[ 'customer.addresses.country' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.country' | t }}{% endcapture %}{% include 'ly-static-string' with '9617245' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label><select class="styled-select address-country" id="address_country" name="address[country]" data-default="{{ default_country }}">{{ country_option_tags }}</select>
     </p>
     <p id="address_province_container" style="display:none;">
-      <label for="address_province" id="address_province_label">{{ 'customer.addresses.province' | t }}</label><select class="styled-select address-province" id="address_province" name="address[province]" data-default="{{ default_province }}"></select>
+      <label for="address_province" id="address_province_label">{% comment %}ly_i18n_replace_for_[ 'customer.addresses.province' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.province' | t }}{% endcapture %}{% include 'ly-static-string' with '9617246' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label><select class="styled-select address-province" id="address_province" name="address[province]" data-default="{{ default_province }}"></select>
     </p>
     <p>
-      <label for="address_zip">{{ 'customer.addresses.zip' | t }}</label><input type="text" class="field address-zip" id="address_zip" name="address[zip]" {% if default_zip != blank %}value="{{ default_zip }}"{% endif %}>
+      <label for="address_zip">{% comment %}ly_i18n_replace_for_[ 'customer.addresses.zip' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.zip' | t }}{% endcapture %}{% include 'ly-static-string' with '9617247' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label><input type="text" class="field address-zip" id="address_zip" name="address[zip]" {% if default_zip != blank %}value="{{ default_zip }}"{% endif %}>
     </p>
 
-    <p class="clearfix"><span class="input-wrap"><input type="button" class="get-rates action-button desaturated" value="{{ 'cart.shipping_calculator.submit' | t }}" /></span></p>
+    <p class="clearfix"><span class="input-wrap"><input type="button" class="get-rates action-button desaturated" value="{% comment %}ly_i18n_replace_for_[ 'cart.shipping_calculator.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.shipping_calculator.submit' | t }}{% endcapture %}{% include 'ly-static-string' with '9617248' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" /></span></p>
 
   </div><div class="wrapper-response"></div>
 
@@ -42,8 +42,8 @@
 <script type="application/json" data-shipping-calculator-strings>
   {
     "customerIsLoggedIn": {{ customer.default_address.country | default: false | json }},
-    "submitButton": {{ 'cart.shipping_calculator.submit' | t | json }},
-    "submitButtonDisabled": {{ 'cart.shipping_calculator.working' | t | json}},
+    "submitButton": {% comment %}ly_i18n_replace_for_[ 'cart.shipping_calculator.submit' | t | json ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.shipping_calculator.submit' | t | json }}{% endcapture %}{% include 'ly-static-string' with '9617249' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape | json }}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %},
+    "submitButtonDisabled": {% comment %}ly_i18n_replace_for_[ 'cart.shipping_calculator.working' | t | json]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.shipping_calculator.working' | t | json}}{% endcapture %}{% include 'ly-static-string' with '9617250' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape | json}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %},
     "moneyFormat": {{ shop.money_with_currency_format | json }}
   }
 </script>

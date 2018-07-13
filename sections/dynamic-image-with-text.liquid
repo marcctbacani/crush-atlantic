@@ -1,4 +1,4 @@
-<div data-section-id="{{ section.id }}" data-section-type="image-block">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div data-section-id="{{ section.id }}" data-section-type="image-block">
 
   {% if section.blocks.size > 0 %}
 
@@ -76,8 +76,8 @@
       <div class="picture-block-wrapper">
         <div class="centering-wrapper">
           <div class="picture-block-content">
-            <h2 class="picture-block-heading">{{ 'onboarding.image_block_title' | t }}</h2>
-            <p class="picture-block-body">{{ 'onboarding.image_block_caption' | t }}</p>
+            <h2 class="picture-block-heading">{% comment %}ly_i18n_replace_for_[ 'onboarding.image_block_title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'onboarding.image_block_title' | t }}{% endcapture %}{% include 'ly-static-string' with '9616997' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h2>
+            <p class="picture-block-body">{% comment %}ly_i18n_replace_for_[ 'onboarding.image_block_caption' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'onboarding.image_block_caption' | t }}{% endcapture %}{% include 'ly-static-string' with '9616998' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
           </div>
         </div>
       </div>

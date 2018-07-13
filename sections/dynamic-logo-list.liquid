@@ -1,4 +1,4 @@
-<div data-section-id="{{ section.id }}" data-section-type="logo-list">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div data-section-id="{{ section.id }}" data-section-type="logo-list">
 
   {%- assign sectionHeading = section.settings.title | escape -%}
   {%- assign border = section.settings.border -%}

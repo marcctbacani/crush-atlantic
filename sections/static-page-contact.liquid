@@ -1,16 +1,16 @@
-<div data-section-id="{{ section.id }}" data-section-type="static-page-contact">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div data-section-id="{{ section.id }}" data-section-type="static-page-contact">
 
   <main class="content content-area">
 
     {% include 'breadcrumbs' %}
 
     <div class="page-title">
-      <h1 class="label">{{ page.title }}</h1>
+      <h1 class="label">{% comment %}ly_code_replace_for_[ page.title ]_begin{% endcomment %}{% include 'ly-title' with page %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
     </div>
 
     <div class="text-content-wrap clearfix">
       <div class="rte clearfix text-content {% if page.content.size > 0 %}has-sidebar{% endif %}">
-        {{ page.content }}
+        {% comment %}ly_code_replace_for_[ page.content ]_begin{% endcomment %}{% include 'ly-content' with page %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
       </div>
 
       <div class="{% if page.content.size > 0 %}sidebar{% else %}full-width-form{% endif %} rte">

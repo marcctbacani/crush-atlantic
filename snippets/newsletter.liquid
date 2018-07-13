@@ -1,4 +1,4 @@
-{% assign pxs_newsletter_snippet_tags = 'prospect' %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% assign pxs_newsletter_snippet_tags = 'prospect' %}
 
 {%- if template contains 'password' %}
   {% assign pxs_newsletter_snippet_tags = pxs_newsletter_snippet_tags | append: ', password page' %}

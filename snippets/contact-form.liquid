@@ -1,29 +1,29 @@
-{% form 'contact' %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% form 'contact' %}
 
   {% if form.errors %}
-    <div class="alert-message error"><span>{{ 'contact.error' | t }}</span></div>
+    <div class="alert-message error"><span>{% comment %}ly_i18n_replace_for_[ 'contact.error' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.error' | t }}{% endcapture %}{% include 'ly-static-string' with '9617109' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span></div>
   {% endif %}
 
   {% if form.posted_successfully? %}
-    <div class="alert-message success"><span>{{ 'contact.success' | t }}</span></div>
+    <div class="alert-message success"><span>{% comment %}ly_i18n_replace_for_[ 'contact.success' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.success' | t }}{% endcapture %}{% include 'ly-static-string' with '9617110' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span></div>
   {% else %}
 
     <div class="field-wrap author">
-      <label>{{ 'general.name' | t }}</label>
-      <input type="text" placeholder="{{ 'general.name_placeholder' | t }}" value="" name="contact[name]" class="field {% if form.errors contains "author" %}error{% endif %}">
+      <label>{% comment %}ly_i18n_replace_for_[ 'general.name' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.name' | t }}{% endcapture %}{% include 'ly-static-string' with '9617111' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+      <input type="text" placeholder="{% comment %}ly_i18n_replace_for_[ 'general.name_placeholder' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.name_placeholder' | t }}{% endcapture %}{% include 'ly-static-string' with '9617112' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" value="" name="contact[name]" class="field {% if form.errors contains "author" %}error{% endif %}">
     </div>
 
     <div class="field-wrap email">
-      <label>{{ 'general.email' | t }}</label>
-      <input type="text" placeholder="{{ 'general.email_placeholder' | t }}" value="" name="contact[email]" class="field {% if form.errors contains "email" %}error{% endif %}">
+      <label>{% comment %}ly_i18n_replace_for_[ 'general.email' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.email' | t }}{% endcapture %}{% include 'ly-static-string' with '9617113' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+      <input type="text" placeholder="{% comment %}ly_i18n_replace_for_[ 'general.email_placeholder' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.email_placeholder' | t }}{% endcapture %}{% include 'ly-static-string' with '9617114' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" value="" name="contact[email]" class="field {% if form.errors contains "email" %}error{% endif %}">
     </div>
 
     <div class="field-wrap body">
-      <label>{{ 'general.message' | t }}</label>
+      <label>{% comment %}ly_i18n_replace_for_[ 'general.message' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.message' | t }}{% endcapture %}{% include 'ly-static-string' with '9617115' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
       <textarea name="contact[body]" class="field {% if form.errors contains "body" %}error{% endif %}"></textarea>
     </div>
 
-    <input type="submit" class="action-button submit-button" value="{{ 'general.submit' | t }}">
+    <input type="submit" class="action-button submit-button" value="{% comment %}ly_i18n_replace_for_[ 'general.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.submit' | t }}{% endcapture %}{% include 'ly-static-string' with '9617116' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
 
   {% endif %}
 

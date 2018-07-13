@@ -1,4 +1,4 @@
-<nav class="
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<nav class="
   full
   {% if headerFormat == 'minimal' %}
     main-header--nav-compressed
@@ -41,7 +41,7 @@
         {% endif %}
 
         <a class="label" href="{{ link.url }}">
-          {{ link.title }}
+          {% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
           {% comment %}
             {% if is_dropdown or is_meganav %}<span class="icon"><</span>{% endif %}
           {% endcomment %}
@@ -71,7 +71,7 @@
                 {% endif %}
               >
                 <a href="{{ link.url }}">
-                  <span class="label">{{ link.title }}</span>
+                  <span class="label">{% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</span>
                   {% comment %}
                     {% if is_dropdown %}<span class="icon">></span>{% endif %}
                   {% endcomment %}
@@ -91,7 +91,7 @@
                         {% if forloop.last %}last{% endif %}
                       ">
                         <a href="{{ link.url }}">
-                          <span class="label">{{ link.title }}</span>
+                          <span class="label">{% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</span>
                         </a>
                       </li>
                     {% endfor %}

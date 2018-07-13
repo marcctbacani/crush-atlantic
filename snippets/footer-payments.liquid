@@ -1,4 +1,4 @@
-{% if shop.enabled_payment_types.size > 0 and paymentOptions %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if shop.enabled_payment_types.size > 0 and paymentOptions %}
   {% include 'icon-sprite.svg' %}
   {% assign available_payment_types = 'apple_pay|amazon_payments|american_express|bitcoin|dankort|diners_club|discover|dwolla|forbrugsforeningen|jcb|laser|maestro|master|paypal|solo|shopify_pay|switch|visa' %}
   <ul class="payment-options">

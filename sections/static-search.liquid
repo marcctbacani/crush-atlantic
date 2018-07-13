@@ -1,4 +1,4 @@
-<div data-section-id="{{ section.id }}" data-section-type="static-search">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div data-section-id="{{ section.id }}" data-section-type="static-search">
 
   {%- assign imageBorders = settings.image-borders -%}
   {%- assign paginationStyle = section.settings.pagination-style -%}
@@ -8,7 +8,7 @@
     {% include 'breadcrumbs' %}
 
     <div class="page-title">
-      <h1 class="label">{{ 'general.search.header' | t }}</h1>
+      <h1 class="label">{% comment %}ly_i18n_replace_for_[ 'general.search.header' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.search.header' | t }}{% endcapture %}{% include 'ly-static-string' with '9617050' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h1>
     </div>
 
     {% paginate search.results by 10 %}
@@ -16,10 +16,10 @@
       <main class="results">
 
         {% capture results %}
-          {{ 'general.search.results' | t: count: search.results_count }}
+          {% comment %}ly_i18n_replace_for_[ 'general.search.results' | t: count: search.results_count ]_begin{% endcomment %}{% if search.results_count  == 0 %}{% capture ly_template %}{{ 'general.search.results' | t: count: search.results_count }}{% endcapture %}{% include 'ly-static-string' with '9617052' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = search.results_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% elsif search.results_count  == 1 %}{% capture ly_template %}{{ 'general.search.results' | t: count: search.results_count }}{% endcapture %}{% include 'ly-static-string' with '9617051' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = search.results_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% elsif search.results_count  == 2 %}{% capture ly_template %}{{ 'general.search.results' | t: count: search.results_count }}{% endcapture %}{% include 'ly-static-string' with '9617052' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = search.results_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% else %}{% capture ly_template %}{{ 'general.search.results' | t: count: search.results_count }}{% endcapture %}{% include 'ly-static-string' with '9617052' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = search.results_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
         {% endcapture %}
 
-        <p class="results-label">{{ 'general.search.results_text' | t: results: results, results_count: search.results_count, search_terms: search.terms }}</p>
+        <p class="results-label">{% comment %}ly_i18n_replace_for_[ 'general.search.results_text' | t: results: results, results_count: search.results_count, search_terms: search.terms ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.search.results_text' | t: results: results, results_count: search.results_count, search_terms: search.terms }}{% endcapture %}{% include 'ly-static-string' with '9617058' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = results %}{% assign ly_template = ly_template | replace: '[[results]]', replacement %}{% assign replacement = search.results_count %}{% assign ly_template = ly_template | replace: '[[results_count]]', replacement %}{% assign replacement = search.terms  %}{% assign ly_template = ly_template | replace: '[[search_terms]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
 
         {% for item in search.results %}
           {% include 'search-result' %}

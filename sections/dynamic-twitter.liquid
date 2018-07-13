@@ -1,4 +1,4 @@
-{%- assign border = section.settings.border -%}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign border = section.settings.border -%}
 {%- assign username = section.settings.username | escape -%}
 {%- assign retweets = section.settings.retweets -%}
 
@@ -20,12 +20,12 @@
       <div class="twitter-tweet" data-twitter-tweets></div>
     {% else %}
       <div class="twitter-tweet">
-        {{ 'onboarding.twitter_tweet' | t }}
+        {% comment %}ly_i18n_replace_for_[ 'onboarding.twitter_tweet' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'onboarding.twitter_tweet' | t }}{% endcapture %}{% include 'ly-static-string' with '9617016' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
         <span class="timestamp">
-          <a href="#">{{ 'onboarding.twitter_posted' | t }} {{'now' | date: "%s" | date: "%B %d"}}</a>
+          <a href="#">{% comment %}ly_i18n_replace_for_[ 'onboarding.twitter_posted' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'onboarding.twitter_posted' | t }}{% endcapture %}{% include 'ly-static-string' with '9617017' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %} {{'now' | date: "%s" | date: "%B %d"}}</a>
           <span class="divider">/</span>
           <a href="#">
-            <span>{{ 'onboarding.twitter_username' | t }}</span>
+            <span>{% comment %}ly_i18n_replace_for_[ 'onboarding.twitter_username' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'onboarding.twitter_username' | t }}{% endcapture %}{% include 'ly-static-string' with '9617018' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
           </a>
         </span>
       </div>

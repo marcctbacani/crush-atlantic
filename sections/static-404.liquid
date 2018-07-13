@@ -1,4 +1,4 @@
-<div data-section-id="{{ section.id }}" data-section-type="static-404">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div data-section-id="{{ section.id }}" data-section-type="static-404">
 
   {%- assign brandNames = settings.show-brand-names -%}
   {%- assign productsCollection = section.settings.products-collection -%}
@@ -11,18 +11,18 @@
     {% include 'breadcrumbs' %}
 
     <div class="page-title">
-      <h1 class="label">{{ 'general.404.title' | t }}</h1>
+      <h1 class="label">{% comment %}ly_i18n_replace_for_[ 'general.404.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.404.title' | t }}{% endcapture %}{% include 'ly-static-string' with '9617020' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h1>
     </div>
 
     {%- capture link -%}
-      <a href="/">{{ 'general.404.home_link' | t }}</a>
+      <a href="/">{% comment %}ly_i18n_replace_for_[ 'general.404.home_link' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.404.home_link' | t }}{% endcapture %}{% include 'ly-static-string' with '9617021' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
     {%- endcapture -%}
 
     <p class="message empty">
       {% if productsCollection != blank %}
-        {{ 'general.404.subtext_collection_html' | t: link: link }}
+        {% comment %}ly_i18n_replace_for_[ 'general.404.subtext_collection_html' | t: link: link ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.404.subtext_collection_html' | t: link: link }}{% endcapture %}{% include 'ly-static-string' with '9617023' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = link  %}{% assign ly_template = ly_template | replace: '[[link]]', replacement %}{% if escape_content %}{{ ly_template}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
       {% else %}
-        {{ 'general.404.subtext_html' | t }}
+        {% comment %}ly_i18n_replace_for_[ 'general.404.subtext_html' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.404.subtext_html' | t }}{% endcapture %}{% include 'ly-static-string' with '9617024' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
       {% endif %}
     </p>
 

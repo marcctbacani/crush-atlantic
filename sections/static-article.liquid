@@ -1,4 +1,4 @@
-{%- assign recentPosts = section.settings.recent-posts -%}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign recentPosts = section.settings.recent-posts -%}
 {%- assign tagList = section.settings.tag-list -%}
 
 <script
@@ -12,7 +12,7 @@
   {% include 'breadcrumbs' %}
 
   <div class="page-title">
-    <h2 class="label"><a href="{{ blog.url }}">{{ blog.title }}</a></h2>
+    <h2 class="label"><a href="{{ blog.url }}">{% comment %}ly_code_replace_for_[ blog.title ]_begin{% endcomment %}{% include 'ly-title' with blog %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a></h2>
   </div>
 
   <div class="content-wrap clearfix">

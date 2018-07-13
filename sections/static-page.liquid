@@ -1,4 +1,4 @@
-<div data-section-id="{{ section.id }}" data-section-type="static-page">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div data-section-id="{{ section.id }}" data-section-type="static-page">
 
   {%- assign sidebarHeading = section.settings.title | escape -%}
   {%- assign sidebarContent = section.settings.content -%}
@@ -14,12 +14,12 @@
     {% include 'breadcrumbs' %}
 
     <div class="page-title">
-      <h1 class="label">{{ page.title }}</h1>
+      <h1 class="label">{% comment %}ly_code_replace_for_[ page.title ]_begin{% endcomment %}{% include 'ly-title' with page %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
     </div>
 
     <div class="text-content-wrap clearfix">
       <div class="rte clearfix text-content {% if hasSidebar %}has-sidebar{% endif %}">
-        {{ page.content }}
+        {% comment %}ly_code_replace_for_[ page.content ]_begin{% endcomment %}{% include 'ly-content' with page %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
       </div>
 
       {% if hasSidebar %}

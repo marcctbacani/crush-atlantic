@@ -1,4 +1,4 @@
-<script
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<script
   type="application/json"
   data-section-type="dynamic-slideshow"
   data-section-id="{{ section.id }}"
@@ -48,10 +48,10 @@
 
         {% if link != blank %}
           <a href="{{ link }}">
-            {{- image_html -}}
+            {{ image_html }}
           </a>
         {% else %}
-          {{- image_html -}}
+          {{ image_html }}
         {% endif %}
       </div>
 

@@ -1,5 +1,5 @@
-{% assign og_title = page_title %}
-{% assign og_description = page_description | default: shop.description | default: shop.name %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% assign og_title = langify_title %}
+{% assign og_description = langify_description | default: langify_shop_description | default: langify_shop_name %}
 {% assign og_url = canonical_url %}
 {% assign og_type = 'website' %}
 {% assign og_image_tags = '' %}
@@ -64,12 +64,12 @@
   {% assign og_type = 'article' %}
   {% assign og_description = article.excerpt_or_content | strip_html %}
 {% elsif template.name == 'password' %}
-  {% assign og_title = shop.name %}
+  {% assign og_title = langify_shop_name %}
   {% assign og_url = shop.url %}
-  {% assign og_description = shop.description | default: shop.name %}
+  {% assign og_description = langify_shop_description | default: langify_shop_name %}
 {% endif %}
 
-<meta property="og:site_name" content="{{ shop.name | escape }}">
+<meta property="og:site_name" content="{{ langify_shop_name | escape }}">
 <meta property="og:url" content="{{ og_url }}">
 <meta property="og:title" content="{{ og_title | escape }}">
 <meta property="og:type" content="{{ og_type }}">
@@ -82,8 +82,8 @@
 
 {{ og_image_tags }}
 
-{% assign twitter_title = page_title %}
-{% assign twitter_description = page_description | default: shop.description | default: shop.name %}
+{% assign twitter_title = langify_title %}
+{% assign twitter_description = langify_description | default: langify_shop_description | default: langify_shop_name %}
 
 {% if twitter_handle == blank %}
   {% assign twitter_handle = settings.social_twitter_handle | split: 'twitter.com/' | last %}

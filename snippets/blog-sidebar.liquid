@@ -1,12 +1,12 @@
-<div class="sidebar">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div class="sidebar">
 
   {% if recentPosts %}
     <div class="module recent-posts first">
-      <label>{{ 'blogs.blog_sidebar.recent_posts' | t }}</label>
+      <label>{% comment %}ly_i18n_replace_for_[ 'blogs.blog_sidebar.recent_posts' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.blog_sidebar.recent_posts' | t }}{% endcapture %}{% include 'ly-static-string' with '9617081' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
       <ul class="posts">
         {% for article in blogs[blog.handle].articles limit: 5 %}
           <li class="post {% include 'for-looper' %}">
-            <a class="title" href="{{ article.url }}">{{ article.title }}</a>
+            <a class="title" href="{{ article.url }}">{% comment %}ly_code_replace_for_[ article.title ]_begin{% endcomment %}{% include 'ly-title' with article %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a>
             <span class="date">{{ article.published_at | date: format: 'short_month' }}</span>
           </li>
         {% endfor %}
@@ -16,7 +16,7 @@
 
   {% if tagList and blog.all_tags.size > 0 %}
     <div class="module tags-list {% unless recentPosts %}first{% endunless %}">
-      <label>{{ 'blogs.blog_sidebar.tags' | t }}</label>
+      <label>{% comment %}ly_i18n_replace_for_[ 'blogs.blog_sidebar.tags' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.blog_sidebar.tags' | t }}{% endcapture %}{% include 'ly-static-string' with '9617082' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
       <ul class="tags">
         {% for tag in blog.all_tags %}
           {% assign tagCount = 0 %}

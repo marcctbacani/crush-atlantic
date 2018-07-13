@@ -1,4 +1,4 @@
-<div data-section-id="{{ section.id }}" data-section-type="rich-text">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div data-section-id="{{ section.id }}" data-section-type="rich-text">
 
   {%- assign border = section.settings.border -%}
   {%- assign featureBorders = section.settings.feature-borders -%}
@@ -15,8 +15,8 @@
           {%- assign page = block.settings.page -%}
 
           {% if page != blank %}
-            <h2>{{ pages[page].title }}</h2>
-            <h3>{{ pages[page].content | strip_html }}</h3>
+            <h2>{% comment %}ly_code_replace_for_[ pages[page].title ]_begin{% endcomment %}{% include 'ly-title' with pages[page] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h2>
+            <h3>{% comment %}ly_code_replace_for_[ pages[page].content | strip_html ]_begin{% endcomment %}{% include 'ly-content' with pages[page] %}{{ ly_translation | strip_html }}{% comment %}ly_code_replace_end{% endcomment %}</h3>
           {% else %}
             {% if heading != blank %}
               <h2>{{ heading }}</h2>
@@ -30,8 +30,8 @@
       {% endfor %}
     {% else %}
       <div class="featured-text">
-        <h2>{{ 'onboarding.welcome_title' | t }}</h2>
-        <h3>{{ 'onboarding.welcome_text_html' | t }}</h3>
+        <h2>{% comment %}ly_i18n_replace_for_[ 'onboarding.welcome_title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'onboarding.welcome_title' | t }}{% endcapture %}{% include 'ly-static-string' with '9617014' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h2>
+        <h3>{% comment %}ly_i18n_replace_for_[ 'onboarding.welcome_text_html' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'onboarding.welcome_text_html' | t }}{% endcapture %}{% include 'ly-static-string' with '9617015' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h3>
       </div>
     {% endif %}
 

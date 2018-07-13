@@ -1,4 +1,4 @@
-<div data-section-id="{{ section.id }}" data-section-type="featured-collection">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div data-section-id="{{ section.id }}" data-section-type="featured-collection">
 
   {%- assign productsPerRow = section.settings.products_per_row -%}
   {%- assign productsLimit = productsPerRow | times: section.settings.rows -%}

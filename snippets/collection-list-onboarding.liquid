@@ -1,4 +1,4 @@
-{% capture current %}{% cycle 1, 2, 3 %}{% endcapture %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% capture current %}{% cycle 1, 2, 3 %}{% endcapture %}
 {% assign placeholder_style = 'collection-' | append: current %}
 {% assign color = settings.primary-border-colour %}
 {% assign color_string = 'fill="' | append: color | append: '" xmlns' %}
@@ -8,8 +8,8 @@
 <div class="collection-wrap">
   <div class="collection placeholder-background" style="background-image:url('{{ demo_image }}');">
     <a href="#">
-      <h3 class="label preload">{{ 'onboarding.collection_title' | t }}</h3>
-      <span class="browse">{{ 'collections.collection.browse' | t }}</span>
+      <h3 class="label preload">{% comment %}ly_i18n_replace_for_[ 'onboarding.collection_title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'onboarding.collection_title' | t }}{% endcapture %}{% include 'ly-static-string' with '9617098' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h3>
+      <span class="browse">{% comment %}ly_i18n_replace_for_[ 'collections.collection.browse' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.collection.browse' | t }}{% endcapture %}{% include 'ly-static-string' with '9617099' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
     </a>
   </div>
 </div>

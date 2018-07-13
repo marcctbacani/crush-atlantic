@@ -1,11 +1,11 @@
-{% if itemType.available %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if itemType.available %}
 
   <div class="badges-wrapper">
     {% if itemType.compare_at_price_min > itemType.price_min %}
-      <span class="badge badge-sale">{{ 'products.product.on_sale' | t }}</span>
+      <span class="badge badge-sale">{% comment %}ly_i18n_replace_for_[ 'products.product.on_sale' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.on_sale' | t }}{% endcapture %}{% include 'ly-static-string' with '9617189' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
     {% endif %}
 
-    {% capture new-tag %}{{ 'products.product.new' | t }}{% endcapture %}
+    {% capture new-tag %}{% comment %}ly_i18n_replace_for_[ 'products.product.new' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.new' | t }}{% endcapture %}{% include 'ly-static-string' with '9617190' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}{% endcapture %}
     {% if product.tags contains new-tag %}
       <span class="badge badge-new">{{ new-tag }}</span>
     {% endif %}
@@ -13,6 +13,6 @@
 
 {% else %}
   <div class="centering-wrapper">
-    <span class="badge badge-soldout">{{ 'products.product.sold_out' | t }}</span>
+    <span class="badge badge-soldout">{% comment %}ly_i18n_replace_for_[ 'products.product.sold_out' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.sold_out' | t }}{% endcapture %}{% include 'ly-static-string' with '9617191' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
   </div>
 {% endif %}

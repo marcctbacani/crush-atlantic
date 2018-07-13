@@ -1,4 +1,4 @@
-<article class="result {% include 'for-looper' %} {% if item.object_type == 'product' %}item-product{% else %}item-article{% endif %}" data-type="{{ item.type }}">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<article class="result {% include 'for-looper' %} {% if item.object_type == 'product' %}item-product{% else %}item-article{% endif %}" data-type="{% comment %}ly_code_replace_for_[ item.type ]_begin{% endcomment %}{% include 'ly-type' with item %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}">
 
   {% if item.object_type == 'product' %}
 
@@ -18,10 +18,10 @@
         <p class="brand">{{ item.vendor | link_to_vendor }}</p>
       {% endif %}
 
-      <p class="title"><a href="{{ item.url }}">{{ item.title }}</a></p>
+      <p class="title"><a href="{{ item.url }}">{% comment %}ly_code_replace_for_[ item.title ]_begin{% endcomment %}{% include 'ly-title' with item %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a></p>
 
       {% if item.compare_at_price_min > item.price_min %}
-        <p class="price sale"><span class="label">{{ 'products.product.on_sale' | t }}</span> <span class="original money">{{ item.compare_at_price_min | money }}</span> <span class="money">{{ item.price_min | money }}</span></p>
+        <p class="price sale"><span class="label">{% comment %}ly_i18n_replace_for_[ 'products.product.on_sale' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.on_sale' | t }}{% endcapture %}{% include 'ly-static-string' with '9617244' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span> <span class="original money">{{ item.compare_at_price_min | money }}</span> <span class="money">{{ item.price_min | money }}</span></p>
       {% else %}
         <p class="price"><span class="money">{{ item.price_min | money }}</span></p>
       {% endif %}
@@ -29,7 +29,7 @@
 
   {% else %}
 
-    <h2 class="title"><a href="{{ item.url }}">{{ item.title }}</a></h2>
+    <h2 class="title"><a href="{{ item.url }}">{% comment %}ly_code_replace_for_[ item.title ]_begin{% endcomment %}{% include 'ly-title' with item %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a></h2>
     {% if item.image %}
       <div class="item-image">
         {%
@@ -43,9 +43,9 @@
     {% endif %}
     <div class="rte clearfix">
       {% if item.object_type == 'article' %}
-        <p>{{ item.excerpt_or_content | strip_html | truncatewords: 50 }}</p>
+        <p>{% comment %}ly_code_replace_for_[ item.excerpt_or_content | strip_html | truncatewords: 50 ]_begin{% endcomment %}{% include 'ly-excerpt_or_content' with item %}{{ ly_translation | strip_html | truncatewords: 50 }}{% comment %}ly_code_replace_end{% endcomment %}</p>
       {% elsif item.object_type == 'page' %}
-        <p>{{ item.content | strip_html | truncatewords: 50 }}</p>
+        <p>{% comment %}ly_code_replace_for_[ item.content | strip_html | truncatewords: 50 ]_begin{% endcomment %}{% include 'ly-content' with item %}{{ ly_translation | strip_html | truncatewords: 50 }}{% comment %}ly_code_replace_end{% endcomment %}</p>
       {% endif %}
     </div>
 

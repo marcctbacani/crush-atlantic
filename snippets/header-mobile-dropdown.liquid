@@ -1,4 +1,4 @@
-<section class="mobile-dropdown" id="main-header--mobile-nav">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<section class="mobile-dropdown" id="main-header--mobile-nav">
 
   {% comment %} First level {% endcomment %}
   {% assign menu = linklists[section.settings.menu] %}
@@ -21,7 +21,7 @@
         {% endif %}
       >
         <a href="{{ link.url }}">
-          {{ link.title }}
+          {% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
           {% if is_meganav or is_dropdown %}<span class="icon"></span>{% endif %}
         </a>
 
@@ -43,7 +43,7 @@
                 {% endif %}
               >
                 <a href="{{ link.url }}">
-                  {{ link.title }}
+                  {% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
                   {% if is_dropdown %}<span class="icon"></span>{% endif %}
                 </a>
 
@@ -55,7 +55,7 @@
                   >
                     {% for link in link.links %}
                       <li class="list-item">
-                        <a href="{{ link.url }}">{{ link.title }}</a>
+                        <a href="{{ link.url }}">{% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a>
                       </li>
                     {% endfor %}
                   </ul>

@@ -1,4 +1,4 @@
-<nav class="compact
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<nav class="compact
   {% if shop.customer_accounts_enabled %}account-enabled{% endif %}
   {% if settings.show-currency-switcher %}currency-enabled{% endif %}">
   <ul>
@@ -7,7 +7,7 @@
       aria-haspopup="true"
       aria-controls="main-header--mobile-nav"
       aria-expanded="false"
-      aria-label="{{ linklists[section.settings.menu].title }}"
+      aria-label="{% comment %}ly_code_replace_for_[ linklists[section.settings.menu].title ]_begin{% endcomment %}{% include 'ly-title' with linklists[section.settings.menu] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}"
     >
       <span class="border"></span>
       <div><span class="icon">n</span></div>
@@ -60,7 +60,7 @@
     </li><li class="search-outer-wrap">
       <div class="search-wrap">
         <form action="/search" method="get">
-          <input class="search-input" name="q" type="text" placeholder="{{ 'general.search_placeholder' | t }}" value="">
+          <input class="search-input" name="q" type="text" placeholder="{% comment %}ly_i18n_replace_for_[ 'general.search_placeholder' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.search_placeholder' | t }}{% endcapture %}{% include 'ly-static-string' with '9617127' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" value="">
           <span class="icon">s</span>
         </form>
       </div>

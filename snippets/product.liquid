@@ -1,4 +1,4 @@
-{% assign fitting_guide_icon = fitting_guide_icon | default: blank %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% assign fitting_guide_icon = fitting_guide_icon | default: blank %}
 {% assign fitting_guide_url = fitting_guide_url | default: blank %}
 {% assign lazy_load = lazy_load | default: false %}
 {% assign show_brand_names = show_brand_names | default: false %}
@@ -16,10 +16,10 @@
 <section class="product-area clearfix">
   <div class="mobile-product-title">
     {% if show_brand_names %}
-      <h3 class="brand">{{ product.vendor }}</h3>
+      <h3 class="brand">{% comment %}ly_code_replace_for_[ product.vendor ]_begin{% endcomment %}{% include 'ly-vendor' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h3>
     {% endif %}
 
-    <h2 class="title">{{ product.title }}</h2>
+    <h2 class="title">{% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h2>
 
     <p class="price sale">
       {% if selected_variant.compare_at_price > selected_variant.price %}
@@ -35,10 +35,10 @@
           href="https://twitter.com/share"
           class="twitter-share-button"
           data-count="none"
-          data-text="{{ shop.name }} | {{ product.title }}:"
+          data-text="{{ langify_shop_name }} | {% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}:"
           data-via="{{ settings.twitter-url | split: 'twitter.com/' | last }}"
         >
-          Tweet
+          <ly-as-9617202>Tweet</ly-as-9617202>
         </a>
       </div>
 
@@ -47,7 +47,7 @@
       </div>
 
       <div class="share-wrap pinterest">
-        <a href="//pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}&amp;media={{ product.featured_image | product_img_url: 'original' }}&amp;description={{ product.title | escape }}" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+        <a href="//pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}&amp;media={{ product.featured_image | product_img_url: 'original' }}&amp;description={% comment %}ly_code_replace_for_[ product.title | escape ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
         <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
       </div>
 
@@ -160,7 +160,7 @@
           class="toggle-fullview"
         >
           <span class="icon">l</span>
-          {{ 'products.product.view_fullsize_image' | t }}
+          {% comment %}ly_i18n_replace_for_[ 'products.product.view_fullsize_image' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.view_fullsize_image' | t }}{% endcapture %}{% include 'ly-static-string' with '9617203' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
         </a>
       </div>
     {% endif %}
@@ -168,11 +168,11 @@
     {% if show_email_link %}
       <div class="notes">
         <a
-          href="mailto:{{ shop.email }}?Subject={{ product.title | escape }}"
+          href="mailto:{{ shop.email }}?Subject={% comment %}ly_code_replace_for_[ product.title | escape ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}"
           class="email-us"
         >
           <span class="icon">j</span>
-          {{ 'products.product.email_us' | t }}
+          {% comment %}ly_i18n_replace_for_[ 'products.product.email_us' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.email_us' | t }}{% endcapture %}{% include 'ly-static-string' with '9617204' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
         </a>
       </div>
     {% endif %}
@@ -184,7 +184,7 @@
           class="fitting-guide"
         >
           <span class="icon">{{ fitting_guide_icon }}</span>
-          {{ 'products.product.fitting_guide' | t }}
+          {% comment %}ly_i18n_replace_for_[ 'products.product.fitting_guide' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.fitting_guide' | t }}{% endcapture %}{% include 'ly-static-string' with '9617205' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
         </a>
       </div>
     {% endif %}
@@ -203,10 +203,10 @@
     >
       <div class="module header">
         {% if show_brand_names %}
-          <h3 class="brand">{{ product.vendor }}</h3>
+          <h3 class="brand">{% comment %}ly_code_replace_for_[ product.vendor ]_begin{% endcomment %}{% include 'ly-vendor' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h3>
         {% endif %}
 
-        <h1 class="title">{{ product.title }}</h1>
+        <h1 class="title">{% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
 
         <p class="price sale">
           {% if selected_variant.compare_at_price > selected_variant.price %}
@@ -223,10 +223,10 @@
             href="https://twitter.com/share"
             class="twitter-share-button"
             data-count="none"
-            data-text="{{ shop.name }} | {{ product.title }}:"
+            data-text="{{ langify_shop_name }} | {% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}:"
             data-via="{{ settings.twitter-url | split: 'twitter.com/' | last }}"
           >
-            Tweet
+            <ly-as-9617202>Tweet</ly-as-9617202>
           </a>
         </div>
 
@@ -235,7 +235,7 @@
         </div>
 
         <div class="share-wrap pinterest">
-          <a href="//pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}&media={{ product.featured_image | product_img_url: 'original' }}&description={{ product.title | escape }}" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+          <a href="//pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}&media={{ product.featured_image | product_img_url: 'original' }}&description={% comment %}ly_code_replace_for_[ product.title | escape ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
           <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
         </div>
 
@@ -292,7 +292,7 @@
                             value="{{ variant.id }}"
                             data-variant-id="{{ variant.id }}"
                           >
-                            {{ variant.title }} - {{ variant.price | money }}
+                            {% comment %}ly_code_replace_for_[ variant.title ]_begin{% endcomment %}{% include 'ly-title' with variant %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %} - {{ variant.price | money }}
                           </option>
                         {% else %}
                           <option
@@ -300,7 +300,7 @@
                             value="{{ variant.id }}"
                             data-variant-id="{{ variant.id }}"
                           >
-                            {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                            {% comment %}ly_code_replace_for_[ variant.title ]_begin{% endcomment %}{% include 'ly-title' with variant %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %} - {% comment %}ly_i18n_replace_for_[ 'products.product.sold_out' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.sold_out' | t }}{% endcapture %}{% include 'ly-static-string' with '9617206' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
                           </option>
                         {% endif %}
                       {% endfor %}
@@ -313,7 +313,7 @@
                   name="id"
                   value="{{ product.variants[0].id }}"
                   type="hidden"
-                  data-variant-title="{{ product.variants[0].title }}"
+                  data-variant-title="{% comment %}ly_code_replace_for_[ product.variants[0].title ]_begin{% endcomment %}{% include 'ly-title' with product.variants[0] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}"
                 />
               {% endunless %}
 
@@ -322,7 +322,7 @@
 
               {% if show_quantity %}
                 <div class="selector-wrapper quantity">
-                  <label>{{ 'general.quantity' | t }}</label>
+                  <label>{% comment %}ly_i18n_replace_for_[ 'general.quantity' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.quantity' | t }}{% endcapture %}{% include 'ly-static-string' with '9617207' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
                   <input
                     type="text"
                     class="product-quantity field"
@@ -338,7 +338,7 @@
                 <input
                   type="submit"
                   class="action-button submit"
-                  value="{{ 'products.product.add_to_cart' | t }}"
+                  value="{% comment %}ly_i18n_replace_for_[ 'products.product.add_to_cart' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.add_to_cart' | t }}{% endcapture %}{% include 'ly-static-string' with '9617208' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}"
                 >
               </div>
 
@@ -349,20 +349,20 @@
           </div>
         {% else %}
           <div class="product-form unavailable">
-            <span class="action-button unavailable disabled">{{ 'products.product.sold_out' | t }}</span>
+            <span class="action-button unavailable disabled">{% comment %}ly_i18n_replace_for_[ 'products.product.sold_out' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.sold_out' | t }}{% endcapture %}{% include 'ly-static-string' with '9617206' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
           </div>
         {% endif %}
       </div>
 
       {% if product.description.size > 0 %}
       <div class="module description">
-        <div class="rte">{{ product.description }}</div>
+        <div class="rte">{% comment %}ly_code_replace_for_[ product.description ]_begin{% endcomment %}{% include 'ly-description' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</div>
       </div>
       {% endif %}
 
       {% if quickshop %}
         <a class="go-to-product" href="{{ product.url | within: collection }}">
-          {{ 'products.product.visit_page' | t }}<span>→</span>
+          {% comment %}ly_i18n_replace_for_[ 'products.product.visit_page' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.visit_page' | t }}{% endcapture %}{% include 'ly-static-string' with '9617209' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}<span>→</span>
         </a>
       {% endif %}
     </div>

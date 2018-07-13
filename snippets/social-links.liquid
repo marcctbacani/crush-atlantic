@@ -1,4 +1,4 @@
-<aside class="social-links">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<aside class="social-links">
   {% if settings.twitter-url.size > 0 %}<a href="{{ settings.twitter-url | escape }}" class="social-link twitter" target="_blank">{% include 'icon' with 'twitter' %}</a>{% endif %}
   {% if settings.facebook-url.size > 0 %}<a href="{{ settings.facebook-url | escape }}" class="social-link facebook" target="_blank">{% include 'icon' with 'facebook' %}</a>{% endif %}
   {% if settings.pinterest-url.size > 0 %}<a href="{{ settings.pinterest-url | escape }}" class="social-link pinterest" target="_blank">{% include 'icon' with 'pinterest' %}</a>{% endif %}

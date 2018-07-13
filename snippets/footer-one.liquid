@@ -1,4 +1,4 @@
-{% assign footerModules = 0 %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% assign footerModules = 0 %}
 
 {% if footerMessage != blank %}
   {% assign footerModules = footerModules | plus: 1 %}
@@ -26,19 +26,19 @@
 
     {% unless settings.twitter-url.size == 0 and settings.facebook-url.size == 0 and settings.pinterest-url.size == 0 and settings.google-plus-url.size == 0 and settings.instagram-url.size == 0 and settings.tumblr-url.size == 0 and settings.youtube-url.size == 0 and settings.vimeo-url.size == 0 %}
       <li class="social">
-        <h2 class="title">{{ 'layout.footer.social_title' | t }}</h2>
+        <h2 class="title">{% comment %}ly_i18n_replace_for_[ 'layout.footer.social_title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.social_title' | t }}{% endcapture %}{% include 'ly-static-string' with '9617117' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h2>
         {% include 'social-links' %}
       </li>
     {% endunless %}
 
     {% if mailingList %}
       <li class="newsletter">
-        <h2 class="title">{{ 'layout.footer.newsletter_title' | t }}</h2>
+        <h2 class="title">{% comment %}ly_i18n_replace_for_[ 'layout.footer.newsletter_title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.newsletter_title' | t }}{% endcapture %}{% include 'ly-static-string' with '9617118' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h2>
         {% form 'customer' %}
           <div class="wrap">
-            <input class="email" name="contact[email]" type="email" placeholder="{{ 'layout.footer.email' | t }}" value="">
+            <input class="email" name="contact[email]" type="email" placeholder="{% comment %}ly_i18n_replace_for_[ 'layout.footer.email' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.email' | t }}{% endcapture %}{% include 'ly-static-string' with '9617119' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" value="">
             <input type="hidden" id="contact_tags" name="contact[tags]" value="prospect,newsletter"/>
-            <input class="submit" name="subscribe" type="submit" value="{{ 'general.submit' | t }}">
+            <input class="submit" name="subscribe" type="submit" value="{% comment %}ly_i18n_replace_for_[ 'general.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.submit' | t }}{% endcapture %}{% include 'ly-static-string' with '9617120' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
           </div>
         {% endform %}
       </li>
@@ -52,14 +52,14 @@
     <nav class="footer-nav">
       <ul>
         {% for link in linklists.footer.links %}
-          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          <li><a href="{{ link.url }}">{% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a></li>
         {% endfor %}
       </ul>
     </nav>
     {% endif %}
   {% endcomment %}
   
-    <p>{{ 'layout.footer.copyright_credit_html' | t }} {{ powered_by_link }}.</p>
+    <p>{% comment %}ly_i18n_replace_for_[ 'layout.footer.copyright_credit_html' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.copyright_credit_html' | t }}{% endcapture %}{% include 'ly-static-string' with '9617121' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %} {{ powered_by_link }}.</p>
 
     {% include 'footer-payments' %}
   </div>

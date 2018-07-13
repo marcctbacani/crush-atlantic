@@ -1,6 +1,6 @@
-<div class="search-wrap">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div class="search-wrap">
   <form action="/search" method="get">
-    <input class="search-input" name="q" type="text" placeholder="{{ 'general.search_placeholder' | t }}" value="">
+    <input class="search-input" name="q" type="text" placeholder="{% comment %}ly_i18n_replace_for_[ 'general.search_placeholder' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.search_placeholder' | t }}{% endcapture %}{% include 'ly-static-string' with '9617129' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" value="">
     {% include 'icon' with 'search' %}
   </form>
 </div>

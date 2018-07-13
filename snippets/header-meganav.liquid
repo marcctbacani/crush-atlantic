@@ -1,4 +1,4 @@
-{% assign menu = linklists[section.settings.menu] %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% assign menu = linklists[section.settings.menu] %}
 
 {% for link in menu.links %}
   {% include 'is-dropdown-or-meganav', first_tier_link: link %}
@@ -22,7 +22,7 @@
             {% if forloop.last %}last{% endif %}
           ">
             <h2 class="label">
-              <a href="{{ link.url }}">{{ link.title }}</a>
+              <a href="{{ link.url }}">{% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a>
             </h2>
 
             <ul class="list-wrap" data-list="{{ link.handle }}">
@@ -36,13 +36,13 @@
                       href="{{ link.url }}"
                       data-category="{{ link.handle }}"
                     >
-                      {{ link.title }}
+                      {% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
                       {% if is_dropdown %}<span class="more-icon">+</span>{% endif %}
                     </a>
                   </li>
                 {% elsif forloop.index == meganavLimit %}
                   <li class="list-item {{ topLevelColumns }}">
-                    <a class="item show-more" href="#">{{ 'layout.header.more' | t }}</a>
+                    <a class="item show-more" href="#">{% comment %}ly_i18n_replace_for_[ 'layout.header.more' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.header.more' | t }}{% endcapture %}{% include 'ly-static-string' with '9617128' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
                   </li>
                 {% endif %}
 
@@ -65,7 +65,7 @@
             "
             data-list="{{ link.handle }}"
           >
-            <h2 class="label">{{ link.title }}</h2>
+            <h2 class="label">{% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h2>
             <ul class="list-wrap">
               {% for link in link.links %}
                 {% include 'is-dropdown-or-meganav', first_tier_link: link %}
@@ -76,7 +76,7 @@
                     class="item"
                     href="{{ link.url }}"
                   >
-                    {{ link.title }}
+                    {% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
                     {% if is_dropdown %}<span class="more-icon">+</span>{% endif %}
                   </a>
                 </li>

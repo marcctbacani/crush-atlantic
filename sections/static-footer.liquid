@@ -1,4 +1,4 @@
-<div data-section-id="{{ section.id }}" data-section-type="static-footer">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div data-section-id="{{ section.id }}" data-section-type="static-footer">
 
   {%- assign footerMessage = section.settings.footer-message -%}
   {%- assign paymentOptions = section.settings.footer-payment-options -%}

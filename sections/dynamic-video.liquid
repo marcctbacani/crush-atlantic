@@ -1,4 +1,4 @@
-{%- assign sectionHeading = section.settings.title | escape -%}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign sectionHeading = section.settings.title | escape -%}
 {%- assign border = section.settings.border -%}
 {%- assign video = section.settings.video_url.id -%}
 {%- assign videoType = section.settings.video_url.type -%}
@@ -36,7 +36,7 @@
     </div>
 
     <div class="home-video-screenshot">
-      <span class="home-video-play-button mobile meta">{{ 'home_page.video_button_text' | t }}</span>
+      <span class="home-video-play-button mobile meta">{% comment %}ly_i18n_replace_for_[ 'home_page.video_button_text' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'home_page.video_button_text' | t }}{% endcapture %}{% include 'ly-static-string' with '9617019' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
 
       {% if image != blank %}
         {%

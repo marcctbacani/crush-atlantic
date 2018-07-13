@@ -36,14 +36,14 @@
     "facebook-url": "",
     "pinterest-url": "",
     "google-plus-url": "",
-    "instagram-url": "https:\/\/instagram.com\/shopify",
+    "instagram-url": "https:\/\/www.instagram.com\/crushcollection\/",
     "tumblr-url": "",
     "youtube-url": "",
     "vimeo-url": "",
     "show-currency-switcher": true,
     "currency-switcher-format": "money_with_currency_format",
-    "currency-switcher-supported-currencies": "CAD USD",
-    "currency-switcher-default": "CAD",
+    "currency-switcher-supported-currencies": "USD CNY",
+    "currency-switcher-default": "USD",
     "checkout_header_image": "",
     "checkout_logo_image": "",
     "checkout_logo_position": "left",
@@ -91,7 +91,7 @@
         "settings": {
           "footer-message-title": "",
           "footer-message": "",
-          "footer-mailing-list": true,
+          "footer-mailing-list": false,
           "footer-payment-options": true,
           "footer-alternate": false,
           "footer-secondary-menu": ""
@@ -104,10 +104,10 @@
             "type": "feature",
             "settings": {
               "inverted": false,
-              "image": "shopify:\/\/shop_images\/012e9bb2-a427-11e7-84b5-dfc1701cb40c_1280x720_163503.jpg",
+              "image": "shopify:\/\/shop_images\/banner1440x600.jpg",
               "slide_title": "Slideshow",
               "caption": "Introduce customers to your shop with lifestyle imagery and product photography.",
-              "button": "Your call to action button",
+              "button": "New Arrivals",
               "link": "https:\/\/themes.shopify.com\/themes\/atlantic\/styles\/light",
               "alignment": "left bottom"
             }
@@ -138,43 +138,11 @@
       "dynamic-collection": {
         "type": "dynamic-collection",
         "settings": {
-          "title": "Featured collection",
+          "title": "these are seasonal reco",
           "border": false,
-          "collection": "",
+          "collection": "dresses",
           "rows": 1,
           "products_per_row": 4
-        }
-      },
-      "dynamic-collection-list": {
-        "type": "dynamic-collection-list",
-        "blocks": {
-          "dynamic-collection-list-block-one": {
-            "type": "feature",
-            "settings": {
-              "collection": ""
-            }
-          },
-          "dynamic-collection-list-block-two": {
-            "type": "feature",
-            "settings": {
-              "collection": ""
-            }
-          },
-          "dynamic-collection-list-block-three": {
-            "type": "feature",
-            "settings": {
-              "collection": ""
-            }
-          }
-        },
-        "block_order": [
-          "dynamic-collection-list-block-one",
-          "dynamic-collection-list-block-two",
-          "dynamic-collection-list-block-three"
-        ],
-        "settings": {
-          "title": "Collections list",
-          "border": false
         }
       },
       "dynamic-blog": {
@@ -194,7 +162,7 @@
               "alignment": "left",
               "title": "Image with text",
               "content": "<p>Say a bit about your brand, a specific product, or promotion.<\/p>",
-              "image": ""
+              "image": "shopify:\/\/shop_images\/karljoel2.png"
             }
           }
         },
@@ -278,15 +246,45 @@
           "recent-posts": true,
           "tag-list": true
         }
+      },
+      "1531272513458": {
+        "type": "dynamic-richtext",
+        "blocks": {
+          "1531272513458-0": {
+            "type": "plain_text",
+            "settings": {
+              "title": "Rich text",
+              "caption": "<p>Use this section to welcome customers to your store, say a bit about your brand, or share news and seasonal promotions.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1531272513458-0"
+        ],
+        "settings": {
+          "border": false,
+          "feature-borders": false
+        }
+      },
+      "1531272979548": {
+        "type": "pxs-newsletter",
+        "settings": {
+          "title": "Stay in touch with crush collection",
+          "text": "<p>Invite customers to join your mailing list.<\/p>",
+          "image": "",
+          "desktop_alignment": "left",
+          "mobile_alignment": "bottom"
+        }
       }
     },
     "content_for_index": [
       "dynamic-slideshow",
-      "dynamic-collection-list",
       "dynamic-collection",
-      "dynamic-blog",
       "home-image-with-text",
-      "dynamic-instagram"
+      "dynamic-blog",
+      "dynamic-instagram",
+      "1531272513458",
+      "1531272979548"
     ]
   },
   "presets": {

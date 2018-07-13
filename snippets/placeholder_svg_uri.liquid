@@ -1,4 +1,4 @@
-{%- comment -%}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- comment -%}
   Outputs a placeholder SVG as a data-uri. This allows us to use Shopify's
   placeholder images as background images.
   See: https://codepen.io/tigt/post/optimizing-svgs-in-data-uris
@@ -25,6 +25,6 @@
     | replace: '<', '%3C'
     | replace: '>', '%3E'
   %}
-  data:image/svg+xml,{{ svg }}
+  <ly-as-9617188>data:image/svg+xml,</ly-as-9617188>{{ svg }}
 {%- endcapture -%}
-{{- datauri | strip -}}
+{{ datauri | strip }}

@@ -1,14 +1,14 @@
-<div class="collection-sorter">
-  <label for="tags-filer">{{ 'collections.listing.filter-by' | t }}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div class="collection-sorter">
+  <label for="tags-filer">{% comment %}ly_i18n_replace_for_[ 'collections.listing.filter-by' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.listing.filter-by' | t }}{% endcapture %}{% include 'ly-static-string' with '9617281' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
     <select id="tags-filer" class="coll-filter styled-select tags-dropdown"
       {% if collection.handle %}
         data-window-href='/collections/{{ collection.handle }}';
       {% elsif collection.products.first.type == collection.title %}
-        data-window-href='{{ collection.title | url_for_type }}';
+        data-window-href='{% comment %}ly_code_replace_for_[ collection.title | url_for_type ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | url_for_type }}{% comment %}ly_code_replace_end{% endcomment %}';
       {% elsif collection.products.first.vendor == collection.title %}
-        data-window-href='{{ collection.title | url_for_vendor }}';
+        data-window-href='{% comment %}ly_code_replace_for_[ collection.title | url_for_vendor ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | url_for_vendor }}{% comment %}ly_code_replace_end{% endcomment %}';
       {% endif %} data-current-href="{{ current_tags }}">
-      <option value="">{{ 'collections.collection.all_items' | t }}</option>
+      <option value="">{% comment %}ly_i18n_replace_for_[ 'collections.collection.all_items' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.collection.all_items' | t }}{% endcapture %}{% include 'ly-static-string' with '9617282' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</option>
       {% for tag in collection.all_tags %}
         {% if current_tags contains tag %}
           <option value="{{ tag | handle }}" selected>{{ tag }}</option>

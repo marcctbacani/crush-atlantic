@@ -1,4 +1,4 @@
-{% assign footerModules = 1 %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% assign footerModules = 1 %}
 
 {% if alternateFooterMenu != blank %}
   {% assign footerModules = footerModules | plus: 1 %}
@@ -21,9 +21,9 @@
         {% endif %}
         {% form 'customer' %}
           <div class="wrap">
-            <input class="email" name="contact[email]" type="email" placeholder="{{ 'layout.footer.email' | t }}" value="">
+            <input class="email" name="contact[email]" type="email" placeholder="{% comment %}ly_i18n_replace_for_[ 'layout.footer.email' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.email' | t }}{% endcapture %}{% include 'ly-static-string' with '9617122' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" value="">
             <input type="hidden" id="contact_tags" name="contact[tags]" value="prospect,newsletter"/>
-            <input class="submit" name="subscribe" type="submit" value="{{ 'general.submit' | t }}">
+            <input class="submit" name="subscribe" type="submit" value="{% comment %}ly_i18n_replace_for_[ 'general.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.submit' | t }}{% endcapture %}{% include 'ly-static-string' with '9617123' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
           </div>
         {% endform %}
       </li>
@@ -36,7 +36,7 @@
     <li class="footer-menu">
       <ul class="footer-linklist-one">
         {% for link in linklists.footer.links %}
-          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          <li><a href="{{ link.url }}">{% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a></li>
         {% endfor %}
       </ul>
     </li>
@@ -45,7 +45,7 @@
       <li class="footer-menu">
         <ul class="footer-linklist-one">
           {% for link in linklists[alternateFooterMenu].links %}
-            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            <li><a href="{{ link.url }}">{% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a></li>
           {% endfor %}
         </ul>
       </li>
@@ -59,7 +59,7 @@
       </nav>
     {% endunless %}
 
-    <p>{{ 'layout.footer.copyright_credit_html' | t }} {{ powered_by_link }}.</p>
+    <p>{% comment %}ly_i18n_replace_for_[ 'layout.footer.copyright_credit_html' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.copyright_credit_html' | t }}{% endcapture %}{% include 'ly-static-string' with '9617124' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %} {{ powered_by_link }}.</p>
 
     {% include 'footer-payments' %}
   </div>

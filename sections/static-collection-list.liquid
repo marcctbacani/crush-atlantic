@@ -1,4 +1,4 @@
-<div data-section-id="{{ section.id }}" data-section-type="static-collection-list">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div data-section-id="{{ section.id }}" data-section-type="static-collection-list">
 
   {% assign using-linklist = false %}
   {% if linklists['all-collections'] and linklists['all-collections'].links.size > 0 %}
@@ -10,7 +10,7 @@
     {% include 'breadcrumbs' %}
 
     <div class="page-title">
-      <h1 class="label">{{ 'collections.listing.header' | t }}</h1>
+      <h1 class="label">{% comment %}ly_i18n_replace_for_[ 'collections.listing.header' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.listing.header' | t }}{% endcapture %}{% include 'ly-static-string' with '9617036' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h1>
     </div>
 
     <section class="collections">

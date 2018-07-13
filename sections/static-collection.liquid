@@ -1,4 +1,4 @@
-<div data-section-id="{{ section.id }}" data-section-type="static-collection">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div data-section-id="{{ section.id }}" data-section-type="static-collection">
 
   {%- assign productsPerRow = section.settings.products_per_row -%}
   {%- assign productsPerPage = productsPerRow | times: section.settings.rows -%}
@@ -54,11 +54,11 @@
               {% include 'breadcrumbs' %}
             {% endunless %}
 
-            <h1 class="label">{{ collection.title }}</h1>
+            <h1 class="label">{% comment %}ly_code_replace_for_[ collection.title ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
 
             {% if collection.description.size %}
               {% unless showCollectionImage %}
-                <div class="description rte">{{ collection.description }}</div>
+                <div class="description rte">{% comment %}ly_code_replace_for_[ collection.description ]_begin{% endcomment %}{% include 'ly-description' with collection %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</div>
               {% endunless %}
             {% endif %}
           </div>
@@ -76,7 +76,7 @@
               {% include 'breadcrumbs' %}
 
               {% if collection.description != blank %}
-                <div class="description rte">{{ collection.description }}</div>
+                <div class="description rte">{% comment %}ly_code_replace_for_[ collection.description ]_begin{% endcomment %}{% include 'ly-description' with collection %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</div>
               {% endif %}
             </div>
           {% endif %}
@@ -102,7 +102,7 @@
           {% endunless %}
 
           {% if collection.products.size == 0 %}
-            <p class="empty">{{ 'collections.collection.no_products' | t }}</p>
+            <p class="empty">{% comment %}ly_i18n_replace_for_[ 'collections.collection.no_products' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.collection.no_products' | t }}{% endcapture %}{% include 'ly-static-string' with '9617037' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
           {% else %}
         </div>
 
@@ -122,17 +122,17 @@
             {% endif %}
 
             {% unless sidebarMenu == '' %}
-              <h2 class="sidebar-title">{{ linklists[sidebarMenu].title }}</h2>
+              <h2 class="sidebar-title">{% comment %}ly_code_replace_for_[ linklists[sidebarMenu].title ]_begin{% endcomment %}{% include 'ly-title' with linklists[sidebarMenu] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h2>
               <ul class="collection-sidebar-menu">
                 {% for link in linklists[sidebarMenu].links %}
                   <li>
-                    <a href="{{ link.url }}">{{ link.title }}</a>
+                    <a href="{{ link.url }}">{% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a>
 
                     {% if link.links != blank %}
                       <ul>
                         {% for link in link.links %}
                           <li>
-                            <a href="{{ link.url }}">{{ link.title }}</a>
+                            <a href="{{ link.url }}">{% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a>
                           </li>
                         {% endfor %}
                       </ul>

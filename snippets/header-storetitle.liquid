@@ -1,4 +1,4 @@
-{% assign heading = 'h2' %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% assign heading = 'h2' %}
 {% if template == 'index' or template contains 'customers' %}
   {% assign heading = 'h1' %}
 {% endif %}

@@ -1,13 +1,13 @@
-{% capture settings_string %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% capture settings_string %}
   {{ settings.show-brand-names }}
-  {{ settings.quickshop-product-email-link }}
+  {% comment %}ly_new_settings_replace_for_[ settings.quickshop-product-email-link ]_begin{% endcomment %}{% assign language = cart.attributes["language"] %}{% if language == nil %}{% assign language = shop.metafields["languages"]["default"] %}{% endif %}{% assign namespace = language | append: "as" %}{% if shop.metafields[namespace]["id9617210"] %}{% assign ly_translation = shop.metafields[namespace]["id9617210"] %}{% else %}{% assign ly_translation = settings.quickshop-product-email-link %}{% endif %}{{ ly_translation }}{% comment %}ly_new_settings_replace_end{% endcomment %}
   {{ settings.image-borders }}
   {{ settings.quickshop-product-quantity-option }}
   {{ settings.quickshop_show_spb }}
-  {{ settings.quickshop-thumb-orientation }}
-  {{ 'products.product.add_to_cart' | t }}
-  {{ 'products.product.sold_out' | t }},
-  {{ 'products.product.unavailable' | t }}
+  {% comment %}ly_new_settings_replace_for_[ settings.quickshop-thumb-orientation ]_begin{% endcomment %}{% assign language = cart.attributes["language"] %}{% if language == nil %}{% assign language = shop.metafields["languages"]["default"] %}{% endif %}{% assign namespace = language | append: "as" %}{% if shop.metafields[namespace]["id9617211"] %}{% assign ly_translation = shop.metafields[namespace]["id9617211"] %}{% else %}{% assign ly_translation = settings.quickshop-thumb-orientation %}{% endif %}{{ ly_translation }}{% comment %}ly_new_settings_replace_end{% endcomment %}
+  {% comment %}ly_i18n_replace_for_[ 'products.product.add_to_cart' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.add_to_cart' | t }}{% endcapture %}{% include 'ly-static-string' with '9617212' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+  {% comment %}ly_i18n_replace_for_[ 'products.product.sold_out' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.sold_out' | t }}{% endcapture %}{% include 'ly-static-string' with '9617213' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %},
+  {% comment %}ly_i18n_replace_for_[ 'products.product.unavailable' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.unavailable' | t }}{% endcapture %}{% include 'ly-static-string' with '9617214' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
 {% endcapture %}
 
 {% assign settings_sha256 = settings_string | sha256 %}
@@ -19,7 +19,7 @@
 >
   <div class="quickshop-content" data-quickshop-content>
     <button class="quickshop-close" data-quickshop-close>
-      <img src="{{ 'close-circle.svg' | asset_url }}">
+      <img src="{% comment %}ly_asset_replace_for_[ 'close-circle.svg' | asset_url ]_begin{% endcomment %}{% assign ly_asset = 'close-circle.svg' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}">
     </button>
 
     <div class="quickshop-product" data-quickshop-product-inject></div>

@@ -1,4 +1,4 @@
-{% if altProductCard %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if altProductCard %}
   {% capture cardType %} product-card-alt{% endcapture %}
 {% endif %}
 
@@ -54,9 +54,9 @@
         >
           <span class="product-card-details-overlay">
             {% if brandNames %}
-              <h3 class="brand">{{ itemType.vendor }}</h3>
+              <h3 class="brand">{% comment %}ly_code_replace_for_[ itemType.vendor ]_begin{% endcomment %}{% include 'ly-vendor' with itemType %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h3>
             {% endif %}
-            <h2 class="title">{{ itemType.title }}</h2>
+            <h2 class="title">{% comment %}ly_code_replace_for_[ itemType.title ]_begin{% endcomment %}{% include 'ly-title' with itemType %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h2>
 
             {% if itemType.available %}
               {% if itemType.compare_at_price_min > itemType.price_min %}
@@ -65,7 +65,7 @@
                 <p class="price"><span class="money">{{ itemType.price_min | money }}</span></p>
               {% endif %}
             {% else %}
-              <p class="price">{{ 'products.product.sold_out' | t }}</p>
+              <p class="price">{% comment %}ly_i18n_replace_for_[ 'products.product.sold_out' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.sold_out' | t }}{% endcapture %}{% include 'ly-static-string' with '9617197' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
             {% endif %}
           </span>
         </a>
@@ -76,7 +76,7 @@
           data-product-sha256="{{ itemType | json | sha256 }}"
           data-product-url="{{ itemType.url | within: collection }}"
         >
-          <span class="label">{{ 'collections.collection.quick_shop' | t }}</span>
+          <span class="label">{% comment %}ly_i18n_replace_for_[ 'collections.collection.quick_shop' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.collection.quick_shop' | t }}{% endcapture %}{% include 'ly-static-string' with '9617198' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
         </div>
       {% endif %}
 
@@ -87,7 +87,7 @@
       {% if brandNames %}
         <h3 class="brand">{{ itemType.vendor | link_to_vendor }}</h3>
       {% endif %}
-      <h2 class="title"><a href="{{ itemType.url | within: collection }}">{{ itemType.title }}</a></h2>
+      <h2 class="title"><a href="{{ itemType.url | within: collection }}">{% comment %}ly_code_replace_for_[ itemType.title ]_begin{% endcomment %}{% include 'ly-title' with itemType %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a></h2>
 
       {% if itemType.available %}
         {% if itemType.compare_at_price_min > itemType.price_min %}
@@ -96,7 +96,7 @@
           <p class="price"><span class="money">{{ itemType.price_min | money }}</span></p>
         {% endif %}
       {% else %}
-        <p class="price"><span class="label">{{ 'products.product.sold_out' | t }}</span></p>
+        <p class="price"><span class="label">{% comment %}ly_i18n_replace_for_[ 'products.product.sold_out' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.sold_out' | t }}{% endcapture %}{% include 'ly-static-string' with '9617197' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span></p>
       {% endif %}
     </div>
   </div>

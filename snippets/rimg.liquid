@@ -1,4 +1,4 @@
-{%- capture _ -%}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- capture _ -%}
   {% comment %}
     @param img
       An Image Drop to display.
@@ -163,14 +163,14 @@
     data-rimg="lazy"
     data-rimg-template="{{ rimg_url_template }}"
     data-rimg-max="{{ img.width }}x{{ img.height }}"
-    {% if placeholder %}data-rimg-placeholder="{{ placeholder }}"{% endif %}
-    {% if class != blank %}class="{{ class }}"{% endif %}
-    {% if style != blank %}style="{{ style }}"{% endif %}
+    {% if placeholder %}<ly-as-9617233>data-rimg-placeholder="</ly-as-9617233>{{ placeholder }}"{% endif %}
+    {% if class != blank %}<ly-as-9617234>class="</ly-as-9617234>{{ class }}"{% endif %}
+    {% if style != blank %}<ly-as-9617235>style="</ly-as-9617235>{{ style }}"{% endif %}
     {% if attr != blank %}{{ attr }}{% endif %}
 
   {% else %}
-    {% if class != blank %}class="{{ class }}"{% endif %}
-    style="
+    {% if class != blank %}<ly-as-9617234>class="</ly-as-9617234>{{ class }}"{% endif %}
+    <ly-as-9617235>style="</ly-as-9617235>
       background-image: url('{{ img | img_url: size }}');
       {% if style != blank %}{{ style }}{% endif %}
     "

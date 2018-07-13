@@ -1,24 +1,24 @@
-<ul class="pagination {% if paginationStyle == 'jump-to-page' %}jump-to-page{% endif %}">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<ul class="pagination {% if paginationStyle == 'jump-to-page' %}jump-to-page{% endif %}">
 
   <li class="previous">
     {% if paginate.previous %}
-      <a href="{{ paginate.previous.url }}">{{ 'general.pagination.previous' | t }}</a>
+      <a href="{{ paginate.previous.url }}">{% comment %}ly_i18n_replace_for_[ 'general.pagination.previous' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.pagination.previous' | t }}{% endcapture %}{% include 'ly-static-string' with '9617182' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
     {% else %}
-      {{ 'general.pagination.previous' | t }}
+      {% comment %}ly_i18n_replace_for_[ 'general.pagination.previous' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.pagination.previous' | t }}{% endcapture %}{% include 'ly-static-string' with '9617182' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
     {% endif %}
   </li>
 
   {% if paginationStyle == 'standard' %}
-    <li class="position">{{ 'general.pagination.summary' | t: current_page: paginate.current_page, pages: paginate.pages }}</li>
+    <li class="position">{% comment %}ly_i18n_replace_for_[ 'general.pagination.summary' | t: current_page: paginate.current_page, pages: paginate.pages ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.pagination.summary' | t: current_page: paginate.current_page, pages: paginate.pages }}{% endcapture %}{% include 'ly-static-string' with '9617185' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = paginate.current_page %}{% assign ly_template = ly_template | replace: '[[current_page]]', replacement %}{% assign replacement = paginate.pages  %}{% assign ly_template = ly_template | replace: '[[pages]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</li>
   {% else %}
     {% for part in paginate.parts %}
       {% if part.is_link %}
-        <li class="jump-to-link">{{ part.title | link_to: part.url }}</li>
+        <li class="jump-to-link">{% comment %}ly_code_replace_for_[ part.title | link_to: part.url ]_begin{% endcomment %}{% include 'ly-title' with part %}{{ ly_translation | link_to: part.url }}{% comment %}ly_code_replace_end{% endcomment %}</li>
       {% else %}
         {% if part.title == '&hellip;' %}
-        <li class="jump-to-link ellipsis">{{ part.title }}</li>
+        <li class="jump-to-link ellipsis">{% comment %}ly_code_replace_for_[ part.title ]_begin{% endcomment %}{% include 'ly-title' with part %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</li>
         {% else %}
-        <li class="jump-to-link active">{{ part.title }}</li>
+        <li class="jump-to-link active">{% comment %}ly_code_replace_for_[ part.title ]_begin{% endcomment %}{% include 'ly-title' with part %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</li>
         {% endif %}
       {% endif %}
     {% endfor %}
@@ -26,9 +26,9 @@
 
   <li class="next">
     {% if paginate.next %}
-      <a href="{{ paginate.next.url }}">{{ 'general.pagination.next' | t }}</a>
+      <a href="{{ paginate.next.url }}">{% comment %}ly_i18n_replace_for_[ 'general.pagination.next' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.pagination.next' | t }}{% endcapture %}{% include 'ly-static-string' with '9617186' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
     {% else %}
-      {{ 'general.pagination.next' | t }}
+      {% comment %}ly_i18n_replace_for_[ 'general.pagination.next' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.pagination.next' | t }}{% endcapture %}{% include 'ly-static-string' with '9617186' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
     {% endif %}
   </li>
 

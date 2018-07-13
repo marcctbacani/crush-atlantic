@@ -1,4 +1,4 @@
-<div data-section-id="{{ section.id }}" data-section-type="featured-blog">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div data-section-id="{{ section.id }}" data-section-type="featured-blog">
 
   {%- assign sectionHeading = section.settings.title | escape -%}
   {%- assign border = section.settings.border -%}
@@ -17,7 +17,7 @@
         {% for article in blogs[featuredBlog].articles limit: 4 %}
           <li class="article {% include 'for-looper' %}">
             <a class="date" href="{{ article.url }}">{{ article.published_at | date: format: 'full_month' }}</a>
-            <a class="title" href="{{ article.url }}">{{ article.title }}</a>
+            <a class="title" href="{{ article.url }}">{% comment %}ly_code_replace_for_[ article.title ]_begin{% endcomment %}{% include 'ly-title' with article %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a>
 
             <div class="rte content">
               {% if article.image %}
@@ -32,7 +32,7 @@
                 </a>
               {% endif %}
 
-              {{ article.excerpt_or_content }}
+              {% comment %}ly_code_replace_for_[ article.excerpt_or_content ]_begin{% endcomment %}{% include 'ly-excerpt_or_content' with article %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
             </div>
           </li>
         {% endfor %}
@@ -40,7 +40,7 @@
         {% for i in (1..4) %}
           <li class="article {% include 'for-looper' %}">
             <a class="date" href="#">{{'now' | date: "%s" | date: "%B %d, %Y"}}</a>
-            <a class="title" href="#">{{ 'onboarding.blog_title' | t }}</a>
+            <a class="title" href="#">{% comment %}ly_i18n_replace_for_[ 'onboarding.blog_title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'onboarding.blog_title' | t }}{% endcapture %}{% include 'ly-static-string' with '9616994' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
 
             <div class="rte content">
               <a href="#" class="article-image image-wrap">
@@ -48,7 +48,7 @@
                 {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
               </a>
 
-              {{ 'onboarding.blog_excerpt' | t }}
+              {% comment %}ly_i18n_replace_for_[ 'onboarding.blog_excerpt' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'onboarding.blog_excerpt' | t }}{% endcapture %}{% include 'ly-static-string' with '9616995' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
             </div>
           </li>
         {% endfor %}

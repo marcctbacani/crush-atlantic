@@ -1,4 +1,4 @@
-<div data-section-id="{{ section.id }}" data-section-type="static-blog">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div data-section-id="{{ section.id }}" data-section-type="static-blog">
 
   {%- assign paginationStyle = section.settings.pagination-style -%}
   {%- assign recentPosts = section.settings.recent-posts -%}
@@ -9,7 +9,7 @@
     {% include 'breadcrumbs' %}
 
     <div class="page-title">
-      <h1 class="label">{{ blog.title }}</h1>
+      <h1 class="label">{% comment %}ly_code_replace_for_[ blog.title ]_begin{% endcomment %}{% include 'ly-title' with blog %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
     </div>
 
     <div class="content-wrap clearfix">
