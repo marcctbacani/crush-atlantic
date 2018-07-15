@@ -1,19 +1,29 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<h2 class="sidebar-title">{% comment %}ly_i18n_replace_for_[ 'collections.listing.taglist' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.listing.taglist' | t }}{% endcapture %}{% include 'ly-static-string' with '9617285' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h2>
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% comment %}
+  <h2 class="sidebar-title">{% comment %}ly_i18n_replace_for_[ 'collections.listing.taglist' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.listing.taglist' | t }}{% endcapture %}{% include 'ly-static-string' with '9617285' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h2>
+{% endcomment %}
 <ul class="tags">
-  {% for tag in collection.all_tags %}
-    <li class="tag show">{{ tag | link_to_tag: tag }}</li>
-  {% endfor %}
-</ul>
 
-{% if current_tags %}
-  <h2 class="sidebar-title">{% comment %}ly_i18n_replace_for_[ 'collections.listing.current' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.listing.current' | t }}{% endcapture %}{% include 'ly-static-string' with '9617286' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h2>
-  <ul class="tags">
-    {% for tag in collection.all_tags %}
-      {% if current_tags contains tag %}
-        <li class="tag show current">
-          {{ tag | append: '<span class="remove">x</span>' | link_to: collection.url }}
-        </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-{% endif %}
+
+  <li class="tag show">
+    <a href="/collections/{{ collection.handle }}/Tops">Tops</a>
+  </li>
+  <li class="tag show">
+    <a href="/collections/{{ collection.handle }}/Sweaters">Sweaters</a>
+  </li>
+  <li class="tag show">
+    <a href="/collections/{{ collection.handle }}/Dresses">Dresses</a>
+  </li>
+  <li class="tag show">
+    <a href="/collections/{{ collection.handle }}/Bottoms">Bottoms</a>
+  </li>
+  <li class="tag show">
+    <a href="/collections/{{ collection.handle }}/Cardigans">Cardigans</a>
+  </li>
+  <li class="tag show">
+    <a href="/collections/{{ collection.handle }}/Coats">Coats</a>
+  </li>
+  <li class="tag show">
+    <a href="/collections/{{ collection.handle }}/Accessories">Accessories</a>
+  </li>
+</ul>

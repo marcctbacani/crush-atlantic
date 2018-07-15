@@ -91,7 +91,7 @@
         "settings": {
           "footer-message-title": "",
           "footer-message": "",
-          "footer-mailing-list": true,
+          "footer-mailing-list": false,
           "footer-payment-options": true,
           "footer-alternate": false,
           "footer-secondary-menu": ""
@@ -140,7 +140,7 @@
         "settings": {
           "title": "these are seasonal reco",
           "border": false,
-          "collection": "dresses",
+          "collection": "",
           "rows": 1,
           "products_per_row": 4
         }
@@ -186,7 +186,7 @@
           "show-collection-image": true,
           "rows": 6,
           "products_per_row": 3,
-          "enable-sorting": true,
+          "enable-sorting": false,
           "enable-tagfilter": true,
           "collection-sidebar": true,
           "collection-sidebar-menu": "",
@@ -246,7 +246,6 @@
           "recent-posts": true,
           "tag-list": true
         }
-<<<<<<< HEAD
       },
       "1531272513458": {
         "type": "dynamic-richtext",
@@ -276,8 +275,6 @@
           "desktop_alignment": "left",
           "mobile_alignment": "bottom"
         }
-=======
->>>>>>> 56fad28c4450ee675b878a2a55ce92dee884c5bb
       }
     },
     "content_for_index": [
