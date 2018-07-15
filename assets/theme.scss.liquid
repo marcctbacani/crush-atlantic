@@ -1121,6 +1121,119 @@ body {
   padding-right: 15px;
 }
 
+// Stephane's code for the footer - Atlantic declaration on line 1398
+#main-footer {
+  nav {
+    margin: 0;
+    padding: 0;
+  }
+  p {
+    margin: 0;
+    padding: 24px 0;
+  }
+  button {
+    border-style: none;
+    padding: 0;
+  }
+  .sd-social > a,
+  .sd-social > button {
+    color: rgba(255, 255, 255, 1);
+    display: inline-block;
+    margin-right: 8px;
+    transition-duration: 0.2s;
+    transition-property: color;
+    vertical-align: middle;
+    svg {
+      transition-duration: 0.2s;
+      transition-property: fill;
+    }
+    &:hover {
+      color: red;
+      text-decoration: none;
+      svg {
+        fill: #a1a1a1;
+      }
+    }
+  }
+  .sd-social {
+    a:last-child {
+      margin-right: 0;
+    }
+    @media screen and (min-width: 720px) {
+      float: right;
+    }
+    svg {
+      height: 56px;
+      fill: #b3b3b3;
+      vertical-align: middle;
+      width: 56px;
+    }
+  }
+  // Stephane overlay
+  // body.with-overlay {
+  //   overflow: hidden;
+  // }
+  // .overlay {
+  //   background: black;
+  //   bottom: 0;
+  //   left: 0;
+  //   opacity: 0;
+  //   overflow: auto;
+  //
+  //   @include breakpoint(mobile) {
+  //     padding: $space;
+  //   }
+  //   @include breakpoint(tablet) {
+  //     padding: 1.5*$space;
+  //   }
+  //
+  //   position: fixed;
+  //   right: 0;
+  //   text-align: left;
+  //   top: 0;
+  //   transform: scale(1.4);
+  //   transition-duration: 0.1s;
+  //   transition-property: opacity, transform, visibility;
+  //   visibility: hidden;
+  //   -webkit-overflow-scrolling: touch;
+  //   z-index: 999;
+  //   &.active {
+  //     opacity: 1;
+  //     transform: scale(1);
+  //     visibility: visible;
+  //   }
+  //   .header {
+  //     // @include clearfix;
+  //     margin-bottom: 24px;
+  //     text-align: right;
+  //   }
+  //   .close {
+  //     margin-right: -24px;
+  //     margin-top: -24px;
+  //     opacity: 0.4;
+  //     padding: 24px;
+  //     transition-property: opacity;
+  //     transition-duration: 0.2s;
+  //     span {
+  //       display: none;
+  //     }
+  //     svg {
+  //       fill: white;
+  //       height: 36px;
+  //       width: 36px;
+  //     }
+  //     &:hover {
+  //       opacity: 1;
+  //     }
+  //   }
+  //   .body {
+  //     margin: 0 auto;
+  //     max-width: 720px;
+  //   }
+  // }
+}
+
+
 .main-footer {
   padding:0 15px;
   margin-top: 24px;
@@ -2017,6 +2130,8 @@ mark {
     display: inline-block;
     fill: $logo-link-color;
     &:hover { fill: $logo-link-color-hover; }
+    transition-duration: 0.2s;
+    transition-property: fill;
     width: 150px;
   }
 }
