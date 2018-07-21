@@ -9,10 +9,12 @@
 
     {% include 'breadcrumbs' %}
 
+    {% comment %}
     <div class="page-title">
       <h1 class="label">{% comment %}ly_i18n_replace_for_[ 'collections.listing.header' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.listing.header' | t }}{% endcapture %}{% include 'ly-static-string' with '9617036' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h1>
     </div>
-
+    {% endcomment %}
+    
     <section class="collections">
       {% if using-linklist %}
         {% for link in linklists['all-collections'].links %}{% include 'collection-list-item' with 'linklist' %}{% endfor %}

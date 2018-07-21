@@ -11,9 +11,11 @@
 <section class="content content-area">
   {% include 'breadcrumbs' %}
 
+  {% comment %}
   <div class="page-title">
     <h2 class="label"><a href="{{ blog.url }}">{% comment %}ly_code_replace_for_[ blog.title ]_begin{% endcomment %}{% include 'ly-title' with blog %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a></h2>
   </div>
+  {% endcomment %}
 
   <div class="content-wrap clearfix">
     <section class="articles">

@@ -7,11 +7,12 @@
   <main class="content content-area">
 
     {% include 'breadcrumbs' %}
-
+    {% comment %}
     <div class="page-title">
       <h1 class="label">{% comment %}ly_code_replace_for_[ blog.title ]_begin{% endcomment %}{% include 'ly-title' with blog %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
     </div>
-
+    {% endcomment %}
+    
     <div class="content-wrap clearfix">
 
       {% paginate blog.articles by 10 %}
