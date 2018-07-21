@@ -1236,7 +1236,7 @@ body {
 
 .main-footer {
   padding:0 15px;
-  margin-top: 24px;
+  margin-top: 48px;
 
   .footer-message,
   .email {
@@ -1263,49 +1263,35 @@ body {
       text-align:center;
       display: inline-block;
       vertical-align: top;
-
       &:first-child { border-left:none; }
-
       @media screen and (max-width: 910px) {
         width:100% !important;
         height: auto;
         border-left:none;
         border-top: 1px solid $primary-border-color;
-
         &:first-child { border-top:none; }
       }
     }
-
     &.module-count-1 > li, &.module-count-2 > li { width:50%; }
-
     &.module-count-1 > li { border-left: 0; }
-
     .title {
       font-size: 14px;
       color: $light-text-color;
       @extend .uc-title;
-
     }
-
     .contact {
-
       .title {
         margin-bottom:35px;
       }
-
     }
-
     .social {
-
       .title {
         margin-bottom:35px;
       }
-
       > ul {
         padding:0 20px;
         font-size: 0;
       }
-
       .social-link {
         width:26px;
         height: 26px;
@@ -1313,7 +1299,6 @@ body {
         position: relative;
         border-radius: 4px;
         display: inline-block;
-
         a {
           font-family: 'icons';
           -webkit-font-smoothing: antialiased;
@@ -1325,18 +1310,14 @@ body {
           left: 0;
           bottom: 0;
           color: $light-text-color;
-
           &:hover { color: hover($light-text-color, true);  }
         }
-
         svg {
           width: 26px;
           height: 26px;
           color: $light-text-color;
-
           &:hover { color: hover($light-text-color, true);  }
         }
-
         &.twitter   a   { top:11px; font-size:48px; }
         &.facebook  a   { top:12px; }
         &.pinterest a   { top:12px; }
@@ -1346,15 +1327,11 @@ body {
         &.youtube a     { top:11px; }
         &.vimeo a       { top:12px; }
       }
-
     }
-
     .newsletter {
-
       .title {
         margin-bottom:36px;
       }
-
       .wrap {
         display: inline-block;
         width:75%;
@@ -1362,10 +1339,8 @@ body {
         padding-right:65px;
         margin:0 auto;
         position: relative;
-
         @media screen and (max-width: 910px) { width:210px; }
       }
-
       .email, .submit {
         @include font($font-headings-secondary);
         outline:none;
@@ -1373,7 +1348,6 @@ body {
         padding:0;
         margin:0;
       }
-
       .email {
         @include font($font-accent);
         border: 1px solid $primary-border-color;
@@ -1383,7 +1357,6 @@ body {
         font-size:12px;
         color: $light-text-color;
       }
-
       .submit {
         position: absolute;
         top:-1px;
@@ -1398,14 +1371,11 @@ body {
         text-align:center;
         border-radius: 0px;
       }
-
     }
-
   }
-
   .sub-footer {
     @include font($font-headings-secondary);
-    margin:20px 0;
+    margin:48px 0 24px;
     font-size:12px;
     color: $theme-detail-link-color;
 
