@@ -55,7 +55,9 @@
               {% include 'breadcrumbs' %}
             {% endunless %}
 
+            {% comment %}
             <h1 class="label">{% comment %}ly_code_replace_for_[ collection.title ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
+            {% endcomment %}
 
             {% if collection.description.size %}
               {% unless showCollectionImage %}
