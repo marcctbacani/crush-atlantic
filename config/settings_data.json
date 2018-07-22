@@ -3,17 +3,17 @@
     "background-colour": "#ffffff",
     "primary-border-colour": "#dddddd",
     "text-colour": "#434343",
-    "title-colour": "#999999",
+    "title-colour": "#6f6f6f",
     "accent-colour": "#ffcf51",
     "accent-hover-colour": "#101010",
     "button-text-colour": "#ffffff",
     "logotype-link-colour": "#101010",
-    "logotype-link-hover-colour": "#999999",
-    "header-action-link-colour": "#999999",
+    "logotype-link-hover-colour": "#6f6f6f",
+    "header-action-link-colour": "#6f6f6f",
     "header-action-link-hover-colour": "#101010",
-    "nav-link-colour": "#999999",
+    "nav-link-colour": "#6f6f6f",
     "nav-link-hover-colour": "#101010",
-    "nav-link-dropdown-colour": "#999999",
+    "nav-link-dropdown-colour": "#6f6f6f",
     "nav-background-colour": "#ffffff",
     "nav-border-colour": "#ffffff",
     "font_body": "lato_n3",
@@ -103,12 +103,12 @@
           "dynamic-slideshow-block-one": {
             "type": "feature",
             "settings": {
-              "inverted": false,
+              "inverted": true,
               "image": "shopify:\/\/shop_images\/banner1440x600.jpg",
-              "slide_title": "Slideshow",
-              "caption": "Introduce customers to your shop with lifestyle imagery and product photography.",
+              "slide_title": "",
+              "caption": "Something new for the winter",
               "button": "New Arrivals",
-              "link": "https:\/\/themes.shopify.com\/themes\/atlantic\/styles\/light",
+              "link": "shopify:\/\/products\/test-coats",
               "alignment": "left bottom"
             }
           },
@@ -116,9 +116,9 @@
             "type": "feature",
             "settings": {
               "inverted": false,
-              "image": "shopify:\/\/shop_images\/AroundCOS3-1440.jpg",
-              "slide_title": "Slideshow",
-              "caption": "Introduce customers to your shop with lifestyle imagery and product photography.",
+              "image": "shopify:\/\/shop_images\/banner1440x600.jpg",
+              "slide_title": "",
+              "caption": "Something new for the winter",
               "button": "Your call to action button",
               "link": "https:\/\/themes.shopify.com\/themes\/atlantic\/styles\/light",
               "alignment": "left bottom"
@@ -138,7 +138,7 @@
       "dynamic-collection": {
         "type": "dynamic-collection",
         "settings": {
-          "title": "these are seasonal reco",
+          "title": "Shop Bestsellers",
           "border": false,
           "collection": "",
           "rows": 1,
@@ -148,7 +148,7 @@
       "dynamic-blog": {
         "type": "dynamic-blog",
         "settings": {
-          "title": "Blog posts",
+          "title": "Most Read",
           "border": false,
           "blog": ""
         }
@@ -174,7 +174,7 @@
       "dynamic-instagram": {
         "type": "dynamic-instagram",
         "settings": {
-          "title": "Instagram feed",
+          "title": "",
           "border": false,
           "access-token": ""
         }
@@ -269,8 +269,8 @@
       "1531272979548": {
         "type": "pxs-newsletter",
         "settings": {
-          "title": "Stay in touch with crush collection",
-          "text": "<p>Invite customers to join your mailing list.<\/p>",
+          "title": "Stay in touch",
+          "text": "",
           "image": "",
           "desktop_alignment": "left",
           "mobile_alignment": "bottom"
