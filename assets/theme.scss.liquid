@@ -875,7 +875,7 @@ $placeholders: '-webkit-input-placeholder',
 
 .section-title {
   @include font($font-headings-secondary);
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.05em;
   text-align: center;
   margin:0 0 45px;
@@ -9798,20 +9798,23 @@ $pxs-newsletter-space-larger: 68px !default;
 
 
 .pxs-newsletter {
-  width: 84%;
+  width: 100%;
   max-width: $max-width;
   min-width: 690px;
-  padding: 50px 15px 0;
-  margin-top: 65px;
+  // padding: 50px 15px 0;
+  // margin-top: 65px;
+  background-color: $primary-border-color;
+  padding: 50px 15px;
+  margin: 15px 0;
 
   @include breakpoint(small) {
     width: 100%;
     min-width: 100%;
-    padding: 50px 50px 0;
+    padding: 30px 15px;
   }
 
   @include breakpoint(phone) {
-    padding: 50px 15px 0;
+    padding: 30px 15px;
   }
 }
 
@@ -9823,10 +9826,10 @@ $pxs-newsletter-space-larger: 68px !default;
 
 .pxs-newsletter-heading {
   @include font($font-headings-secondary);
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-size: 28px;
+  text-transform: none;
   text-align: center;
+  // letter-spacing: 0.05em;
   color: $title-color;
 }
 
@@ -9871,10 +9874,17 @@ $pxs-newsletter-space-larger: 68px !default;
   margin: 0;
   padding: 8px 0 8px 8px;
   font-size: 12px;
-  color: $light-text-color;
+  color: black;
   background: transparent;
-  border: 1px solid $primary-border-color;
+  border: 1px solid black;
+  padding: 15px 25px;
+  // input[type="email"] { color: black; }
 }
+
+input[type="email"].pxs-newsletter-form-input::-webkit-input-placeholder {
+  color: black;
+}
+
 
 .pxs-newsletter-form-button {
   @include font($font-headings-secondary);
@@ -9886,6 +9896,7 @@ $pxs-newsletter-space-larger: 68px !default;
   color: $background-color;
   background: $nav-link-color-hover;
   border: 0;
+  padding: 15px 25px;
 }
 
 $pxs-map-height-small: 400px !default;
