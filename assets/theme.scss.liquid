@@ -1962,11 +1962,15 @@ mark {
     -webkit-appearance: none;
   }
 
-  .compact & {
-    @include font($font-accent, $font-weight: bolder);
-    padding-top: 14px;
-    font-size: 13px;
-  }
+
+}
+.ly-compact {
+  @include font($font-accent, $font-weight: bolder);
+  padding-top: 0px;
+  font-size: 13px;
+  display: inline-block;
+  padding: 0px;
+  height: 53px;
 }
 
 // Action links
@@ -2736,6 +2740,10 @@ nav.compact {
     &.dropdown .icon {
       margin-top: 8px;
       font-size: 27px;
+    }
+
+    &.ly {
+    white-space: pre;
     }
 
     &.account .icon {
