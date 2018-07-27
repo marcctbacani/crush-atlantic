@@ -1,4 +1,6 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% assign footerModules = 1 %}
+
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% assign footerModules = 1 %}
 
 {% if alternateFooterMenu != blank %}
   {% assign footerModules = footerModules | plus: 1 %}
