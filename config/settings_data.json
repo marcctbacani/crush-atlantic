@@ -40,6 +40,10 @@
     "tumblr-url": "",
     "youtube-url": "",
     "vimeo-url": "",
+    "show-currency-switcher": true,
+    "currency-switcher-format": "money_with_currency_format",
+    "currency-switcher-supported-currencies": "USD CNY",
+    "currency-switcher-default": "USD",
     "show_multiple_currencies": true,
     "currency_format": "money_with_currency_format",
     "supported_currencies": "USD CNY",
@@ -58,10 +62,6 @@
     "checkout_accent_color": "#197bbd",
     "checkout_button_color": "#197bbd",
     "checkout_error_color": "#e32c2b",
-    "show-currency-switcher": true,
-    "currency-switcher-format": "money_with_currency_format",
-    "currency-switcher-supported-currencies": "USD CNY",
-    "currency-switcher-default": "USD",
     "show-mailing-list": true,
     "mailchimp-action-url": "",
     "sections": {
@@ -180,7 +180,7 @@
         "settings": {
           "title": "",
           "border": false,
-          "access-token": ""
+          "access-token": "7705794026.1677ed0.34df349ed0ed43cd9ece267ea9ebd2c1"
         }
       },
       "static-collection": {
