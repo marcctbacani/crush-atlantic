@@ -1,4 +1,5 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<nav class="compact
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<nav class="compact
   {% if shop.customer_accounts_enabled %}account-enabled{% endif %}
   {% if settings.show-currency-switcher %}currency-enabled{% endif %}">
   <ul>
@@ -13,23 +14,30 @@
       <div><span class="icon">n</span></div>
     </li>
 
-    {% if settings.show-currency-switcher %}
-      <li class="nav-item currency">
-        <div class="currency-switcher">
-          <div class="selected-currency"></div><span class="drop-arrow"><</span>
-          <select id="currencies" name="currencies">
-            {% capture codes %},USD,EUR,GBP,CAD,ARS,AUD,BBD,BDT,BSD,BHD,BRL,BOB,BND,BGN,MMK,KYD,CLP,CNY,COP,CRC,HRK,CZK,DKK,DOP,XCD,EGP,XPF,FJD,GHS,GTQ,GYD,GEL,HKD,HUF,ISK,INR,IDR,NIS,JMD,JPY,JOD,KZT,KES,KWD,LVL,LTL,MXN,MYR,MUR,MDL,MAD,MNT,MZN,ANG,NZD,NGN,NOK,OMR,PKR,PYG,PEN,PHP,PLN,QAR,RON,RUB,SAR,RSD,SCR,SGD,SYP,ZAR,KRW,LKR,SEK,CHF,TWD,THB,TZS,TTD,TRY,UAH,AED,UYU,VEB,VND,ZMK,{% endcapture %}
-            {% assign supported_codes = settings.currency-switcher-supported-currencies | escape | split: ' ' %}
-            <option value="{{ shop.currency }}" selected="selected">{{ shop.currency }}</option>
-            {% for code in supported_codes %}
-              {% if code != shop.currency and codes contains code %}
-                <option value="{{ code }}">{{ code }}</option>
-              {% endif %}
-            {% endfor %}
-          </select>
-        </div>
-      </li>
-    {% endif %}
+      {% if settings.show-currency-switcher %}
+        <li class="nav-item currency">
+          <div class="currency-switcher">
+            <div class="selected-currency"></div><span class="drop-arrow"><</span>
+            <select id="currencies" name="currencies">
+              {% capture codes %},USD,EUR,GBP,CAD,ARS,AUD,BBD,BDT,BSD,BHD,BRL,BOB,BND,BGN,MMK,KYD,CLP,CNY,COP,CRC,HRK,CZK,DKK,DOP,XCD,EGP,XPF,FJD,GHS,GTQ,GYD,GEL,HKD,HUF,ISK,INR,IDR,NIS,JMD,JPY,JOD,KZT,KES,KWD,LVL,LTL,MXN,MYR,MUR,MDL,MAD,MNT,MZN,ANG,NZD,NGN,NOK,OMR,PKR,PYG,PEN,PHP,PLN,QAR,RON,RUB,SAR,RSD,SCR,SGD,SYP,ZAR,KRW,LKR,SEK,CHF,TWD,THB,TZS,TTD,TRY,UAH,AED,UYU,VEB,VND,ZMK,{% endcapture %}
+              {% assign supported_codes = settings.currency-switcher-supported-currencies | escape | split: ' ' %}
+              <option value="{{ shop.currency }}" selected="selected">{{ shop.currency }}</option>
+              {% for code in supported_codes %}
+                {% if code != shop.currency and codes contains code %}
+                  <option value="{{ code }}">{{ code }}</option>
+                {% endif %}
+              {% endfor %}
+            </select>
+          </div>
+        </li>
+      {% endif %}
+    {% comment %}
+    <li class="nav-item ly">
+      <select id="ly-languages-switcher" class="ly-languages-switcher ly-compact">
+        {% for language in shop.metafields.languages %}{% assign key = language | first %}{% assign value = language | last %}{% if key != "default" %}<option value="{{ key }}">{{ value }}</option>{% endif %}{% endfor %}
+      </select>
+    </li>
+    {% endcomment %}
 
     {% if shop.customer_accounts_enabled %}
       <li class="nav-item account">

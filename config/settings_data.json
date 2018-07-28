@@ -44,6 +44,10 @@
     "currency-switcher-format": "money_with_currency_format",
     "currency-switcher-supported-currencies": "USD CNY",
     "currency-switcher-default": "USD",
+    "show_multiple_currencies": true,
+    "currency_format": "money_with_currency_format",
+    "supported_currencies": "USD CNY",
+    "default_currency": "USD",
     "checkout_header_image": "",
     "checkout_logo_image": "",
     "checkout_logo_position": "left",
@@ -176,7 +180,7 @@
         "settings": {
           "title": "",
           "border": false,
-          "access-token": ""
+          "access-token": "7705794026.1677ed0.34df349ed0ed43cd9ece267ea9ebd2c1"
         }
       },
       "static-collection": {
