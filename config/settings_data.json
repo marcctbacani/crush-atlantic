@@ -110,9 +110,9 @@
               "inverted": true,
               "image": "shopify:\/\/shop_images\/banner1440x600.jpg",
               "slide_title": "",
-              "caption": "Something new for the winter",
+              "caption": "Something new for the fall",
               "button": "New Arrivals",
-              "link": "shopify:\/\/products\/test-coats",
+              "link": "shopify:\/\/collections\/new-arrivals",
               "alignment": "left bottom"
             }
           },
@@ -154,7 +154,7 @@
         "settings": {
           "title": "Most Read",
           "border": false,
-          "blog": ""
+          "blog": "news"
         }
       },
       "home-image-with-text": {
@@ -180,7 +180,7 @@
         "settings": {
           "title": "",
           "border": false,
-          "access-token": "7705794026.1677ed0.34df349ed0ed43cd9ece267ea9ebd2c1"
+          "access-token": "5813443119.1677ed0.acda1c2126434c29bbd3d7362e44dd6c"
         }
       },
       "static-collection": {
