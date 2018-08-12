@@ -3231,6 +3231,22 @@ td { vertical-align: top; }
 
 .chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
 
+// Stephane making body copy larger on static pages
+#shopify-section-static-page > div > main > div.text-content-wrap.clearfix {
+  p,
+  li {
+    font-size: 18px;
+    line-height: 30px;
+    @include breakpoint(small) {
+      font-size: 16px;
+      line-height: 27px;
+    }
+  }
+  .image-wrap {
+    box-shadow: none;
+  }
+}
+
 .rte {
   font-size:14px;
 
