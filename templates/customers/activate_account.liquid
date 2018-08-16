@@ -1,4 +1,5 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<section class="content content-area customer activate">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<section class="content content-area customer activate">
 
   {% include 'breadcrumbs' %}
 
@@ -6,8 +7,11 @@
     <span class="label">{% comment %}ly_i18n_replace_for_[ 'customer.activate_account.header' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.activate_account.header' | t }}{% endcapture %}{% include 'ly-static-string' with '9617350' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
   </div>
 
+
   <div class="account-form">
     {% form 'activate_customer_password' %}
+    
+
 
       <p class="message">{% comment %}ly_i18n_replace_for_[ 'customer.activate_account.subtext' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.activate_account.subtext' | t }}{% endcapture %}{% include 'ly-static-string' with '9617352' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
 
@@ -30,5 +34,7 @@
 
     {% endform %}
   </div>
+
+
 
 </section>

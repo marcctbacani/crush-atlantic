@@ -40,18 +40,18 @@
     "tumblr-url": "",
     "youtube-url": "",
     "vimeo-url": "",
-    "show-currency-switcher": true,
+    "show-currency-switcher": false,
     "currency-switcher-format": "money_with_currency_format",
     "currency-switcher-supported-currencies": "USD CNY",
     "currency-switcher-default": "USD",
-    "show_multiple_currencies": true,
+    "show_multiple_currencies": false,
     "currency_format": "money_with_currency_format",
     "supported_currencies": "USD CNY",
     "default_currency": "USD",
     "checkout_header_image": "",
-    "checkout_logo_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Artboard_1.png",
     "checkout_logo_position": "left",
-    "checkout_logo_size": "small",
+    "checkout_logo_size": "medium",
     "checkout_body_background_image": "",
     "checkout_body_background_color": "#fff",
     "checkout_input_background_color_mode": "white",
@@ -59,8 +59,8 @@
     "checkout_sidebar_background_color": "#fafafa",
     "checkout_heading_font": "Lato",
     "checkout_body_font": "Lato",
-    "checkout_accent_color": "#197bbd",
-    "checkout_button_color": "#197bbd",
+    "checkout_accent_color": "#ffcf51",
+    "checkout_button_color": "#ffcf51",
     "checkout_error_color": "#e32c2b",
     "show-mailing-list": true,
     "mailchimp-action-url": "",
@@ -98,7 +98,7 @@
           "footer-mailing-list": false,
           "footer-payment-options": true,
           "footer-alternate": false,
-          "footer-secondary-menu": ""
+          "footer-secondary-menu": "footer"
         }
       },
       "dynamic-slideshow": {
@@ -142,9 +142,9 @@
       "dynamic-collection": {
         "type": "dynamic-collection",
         "settings": {
-          "title": "Shop Bestsellers",
+          "title": "CRUSH Bestsellers",
           "border": false,
-          "collection": "",
+          "collection": "best-sellers",
           "rows": 1,
           "products_per_row": 4
         }
@@ -164,8 +164,8 @@
             "type": "feature",
             "settings": {
               "alignment": "left",
-              "title": "Image with text",
-              "content": "<p>Say a bit about your brand, a specific product, or promotion.<\/p>",
+              "title": "CRUSH",
+              "content": "<p>That warm rush of desire and affection, to capture the lightness of being and hope that come with being blissfully infatuated with somebody.<\/p>\n<p><strong><a href=\"\/pages\/care\" title=\"Care\">Learn more <\/a><\/strong>about CRUSH Collection.<\/p>",
               "image": "shopify:\/\/shop_images\/karljoel2.png"
             }
           }
@@ -257,8 +257,8 @@
           "1531272513458-0": {
             "type": "plain_text",
             "settings": {
-              "title": "Rich text",
-              "caption": "<p>Use this section to welcome customers to your store, say a bit about your brand, or share news and seasonal promotions.<\/p>"
+              "title": "CRUSH Access",
+              "caption": "<p><strong>10% OFF your first order!<\/strong> Join CRUSH Access to get special rewards, discounts, and collection updates. Join the program today and we will email you a coupon for 10% OFF your first order.<\/p>\n<p><\/p>\n<p><a href=\"https:\/\/www.crushcollection.com\/account\/login\" title=\"https:\/\/www.crushcollection.com\/account\/login\"><strong>Get Access Now!<\/strong><\/a><\/p>"
             }
           }
         },
@@ -273,11 +273,17 @@
       "1531272979548": {
         "type": "pxs-newsletter",
         "settings": {
-          "title": "Stay in touch",
-          "text": "",
+          "title": "Have a CRUSH on us?",
+          "text": "<p>Get emailed product announcements and offers from CRUSH Collection. You can break up with us anytime, just look for the &ldquo;unsubscribe&rdquo; link in any of our emails.<\/p>",
           "image": "",
           "desktop_alignment": "left",
           "mobile_alignment": "bottom"
+        }
+      },
+      "static-page-contact": {
+        "type": "static-page-contact",
+        "settings": {
+          "show-breadcrumbs": false
         }
       }
     },
@@ -286,8 +292,8 @@
       "dynamic-collection",
       "home-image-with-text",
       "dynamic-blog",
-      "dynamic-instagram",
       "1531272513458",
+      "dynamic-instagram",
       "1531272979548"
     ]
   },
