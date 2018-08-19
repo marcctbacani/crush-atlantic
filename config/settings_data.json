@@ -40,11 +40,11 @@
     "tumblr-url": "",
     "youtube-url": "",
     "vimeo-url": "",
-    "show-currency-switcher": true,
+    "show-currency-switcher": false,
     "currency-switcher-format": "money_with_currency_format",
     "currency-switcher-supported-currencies": "USD CNY",
     "currency-switcher-default": "USD",
-    "show_multiple_currencies": true,
+    "show_multiple_currencies": false,
     "currency_format": "money_with_currency_format",
     "supported_currencies": "USD CNY",
     "default_currency": "USD",
@@ -258,7 +258,7 @@
             "type": "plain_text",
             "settings": {
               "title": "CRUSH Access",
-              "caption": "<p><strong>10% OFF your first order!<\/strong> Join CRUSH Access to get special rewards, discounts, and collection updates. Join the program today and we will email you a coupon for 10% OFF your first order.<\/p>\n<p><\/p>\n<p><a href=\"https:\/\/www.crushcollection.com\/account\/login\" title=\"https:\/\/www.crushcollection.com\/account\/login\"><strong>Get Access Now!<\/strong><\/a><\/p>"
+              "caption": "<p>Join Crush Access&nbsp;today&nbsp;to receive special rewards, discounts, and collection updates. 10% OFF your first order! <a href=\"https:\/\/www.crushcollection.com\/account\/login\" title=\"https:\/\/www.crushcollection.com\/account\/login\">Get on board here!<\/a><\/p>"
             }
           }
         },
@@ -266,7 +266,7 @@
           "1531272513458-0"
         ],
         "settings": {
-          "border": false,
+          "border": true,
           "feature-borders": false
         }
       },
@@ -278,6 +278,12 @@
           "image": "",
           "desktop_alignment": "left",
           "mobile_alignment": "bottom"
+        }
+      },
+      "static-page-contact": {
+        "type": "static-page-contact",
+        "settings": {
+          "show-breadcrumbs": false
         }
       }
     },

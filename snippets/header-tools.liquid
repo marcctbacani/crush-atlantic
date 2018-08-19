@@ -105,7 +105,17 @@
           </div>
           <div class="options clearfix">
             <a class="action-button view-cart desaturated" href="/cart">{% comment %}ly_i18n_replace_for_[ 'layout.header.view_cart' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.header.view_cart' | t }}{% endcapture %}{% include 'ly-static-string' with '9617136' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
+
+            {% comment %}
+
+            <input class="action-button" type="submit" name="checkout" value="{% comment %}ly_i18n_replace_for_[ 'cart.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.submit' | t }}{% endcapture %}{% include 'ly-static-string' with '9617033' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" />
+
+            {% endcomment %}
+
+            {% comment %}
+            
             <a class="action-button checkout" href="/checkout{% comment %}ly_checkout_begin{% endcomment %}{% assign language = cart.attributes["language"] %}{% if language == nil %}{% assign language = shop.metafields["languages"]["default"] %}{% endif %}{% assign checkout_code = shop.metafields.language_codes[language] %}{% if checkout_code %}{% assign checkout_code = '?locale=' | append: checkout_code %}{{ checkout_code }}{% endif %}{% comment %}ly_checkout_end{% endcomment %}">{% comment %}ly_i18n_replace_for_[ 'layout.header.checkout' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.header.checkout' | t }}{% endcapture %}{% include 'ly-static-string' with '9617137' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
+{% endcomment %}
           </div>
         </div>
       </div>
