@@ -1,13 +1,9 @@
+// line 2017 in theme.scss
 body#page-about {
 	background-color: yellow;
-	#container {
-		max-width: 1200px !important;
-		margin: 0 auto !important;
-	}
-	.page-body-content {
-		color: red;
-	}
-	h2 {
-		color: red;
+	.cover {
+		background-size: cover;
+		background-repeat: none;
+		background-position: center;
 	}
 }
