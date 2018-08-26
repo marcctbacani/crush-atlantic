@@ -142,7 +142,7 @@
       "dynamic-collection": {
         "type": "dynamic-collection",
         "settings": {
-          "title": "Bestselling",
+          "title": "Our Selection",
           "border": false,
           "collection": "best-sellers",
           "rows": 1,
