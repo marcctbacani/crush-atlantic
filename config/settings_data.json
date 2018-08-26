@@ -142,7 +142,7 @@
       "dynamic-collection": {
         "type": "dynamic-collection",
         "settings": {
-          "title": "CRUSH Bestsellers",
+          "title": "Our Selection",
           "border": false,
           "collection": "best-sellers",
           "rows": 1,
@@ -164,8 +164,8 @@
             "type": "feature",
             "settings": {
               "alignment": "left",
-              "title": "CRUSH",
-              "content": "<p>That warm rush of desire and affection, to capture the lightness of being and hope that come with being blissfully infatuated with somebody.<\/p>\n<p><strong><a href=\"\/pages\/care\" title=\"Care\">Learn more <\/a><\/strong>about CRUSH Collection.<\/p>",
+              "title": "Caring for things",
+              "content": "<p>That warm rush of desire and affection, to capture the lightness of being and hope that come with being blissfully infatuated with somebody.<\/p>\n<p><strong>Learn <a href=\"\/pages\/care\" title=\"https:\/\/crush-c.myshopify.com\/pages\/care\">how to care<\/a> for your stuff:)<\/strong><\/p>",
               "image": "shopify:\/\/shop_images\/karljoel2.png"
             }
           }
@@ -257,7 +257,7 @@
           "1531272513458-0": {
             "type": "plain_text",
             "settings": {
-              "title": "CRUSH Access",
+              "title": "Get on board",
               "caption": "<p>Join Crush Access&nbsp;today&nbsp;to receive special rewards, discounts, and collection updates. 10% OFF your first order! <a href=\"https:\/\/www.crushcollection.com\/account\/login\" title=\"https:\/\/www.crushcollection.com\/account\/login\">Get on board here!<\/a><\/p>"
             }
           }
@@ -273,7 +273,7 @@
       "1531272979548": {
         "type": "pxs-newsletter",
         "settings": {
-          "title": "Have a CRUSH on us?",
+          "title": "Have a crush already?",
           "text": "<p>Get emailed product announcements and offers from CRUSH Collection. You can break up with us anytime, just look for the &ldquo;unsubscribe&rdquo; link in any of our emails.<\/p>",
           "image": "",
           "desktop_alignment": "left",
