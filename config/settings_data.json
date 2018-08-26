@@ -108,11 +108,11 @@
             "type": "feature",
             "settings": {
               "inverted": true,
-              "image": "shopify:\/\/shop_images\/banner1440x600.jpg",
+              "image": "shopify:\/\/shop_images\/CRUSH_Collection_Fall_2018_hero_640_1440.jpg",
               "slide_title": "",
               "caption": "Something new for the fall",
-              "button": "New Arrivals",
-              "link": "shopify:\/\/collections\/new-arrivals",
+              "button": "Shop Fall 2018",
+              "link": "shopify:\/\/collections\/fall-2018",
               "alignment": "left bottom"
             }
           },
@@ -120,11 +120,11 @@
             "type": "feature",
             "settings": {
               "inverted": false,
-              "image": "shopify:\/\/shop_images\/banner1440x600.jpg",
+              "image": "shopify:\/\/shop_images\/CRUSH_Collection_Essentials_hero_1440_640.jpg",
               "slide_title": "",
-              "caption": "Something new for the winter",
-              "button": "Your call to action button",
-              "link": "https:\/\/themes.shopify.com\/themes\/atlantic\/styles\/light",
+              "caption": "Comfort to love yourself",
+              "button": "Shop Essentials",
+              "link": "shopify:\/\/collections\/essentials",
               "alignment": "left bottom"
             }
           }
