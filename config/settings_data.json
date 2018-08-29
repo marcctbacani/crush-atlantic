@@ -108,7 +108,7 @@
             "type": "feature",
             "settings": {
               "inverted": true,
-              "image": "shopify:\/\/shop_images\/CRUSH_Collection_Fall_2018_hero_640_1440.jpg",
+              "image": "shopify:\/\/shop_images\/CRUSH_Fall_HOME_hero_2018.jpg",
               "slide_title": "",
               "caption": "Something new for the fall",
               "button": "Shop Fall 2018",
@@ -120,7 +120,7 @@
             "type": "feature",
             "settings": {
               "inverted": false,
-              "image": "shopify:\/\/shop_images\/CRUSH_Collection_Essentials_hero_1440_640.jpg",
+              "image": "shopify:\/\/shop_images\/CRUSH_Essentials_HOME_Hero.jpg",
               "slide_title": "",
               "caption": "Comfort to love yourself",
               "button": "Shop Essentials",
@@ -258,7 +258,7 @@
             "type": "plain_text",
             "settings": {
               "title": "Get on board",
-              "caption": "<p>Join Crush Access&nbsp;today&nbsp;to receive special rewards, discounts, and collection updates. 10% OFF your first order! <a href=\"https:\/\/www.crushcollection.com\/account\/login\" title=\"https:\/\/www.crushcollection.com\/account\/login\">Get on board here!<\/a><\/p>"
+              "caption": "<p>Join Crush Access&nbsp;today&nbsp;to receive special rewards, discounts, and collection updates. 10% OFF your first order! <a href=\"https:\/\/www.crushcollection.com\/?loyal\" title=\"https:\/\/www.crushcollection.com\/?loyal\">Get on board here!<\/a><\/p>"
             }
           }
         },
@@ -291,9 +291,9 @@
       "dynamic-slideshow",
       "dynamic-collection",
       "home-image-with-text",
-      "dynamic-blog",
-      "1531272513458",
       "dynamic-instagram",
+      "1531272513458",
+      "dynamic-blog",
       "1531272979548"
     ]
   },
