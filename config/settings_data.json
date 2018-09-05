@@ -177,6 +177,7 @@
       },
       "dynamic-instagram": {
         "type": "dynamic-instagram",
+        "disabled": true,
         "settings": {
           "title": "",
           "border": false,
