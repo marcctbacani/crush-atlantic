@@ -1,4 +1,5 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<article id="article-{{ article.id }}" class="article clearfix {% include 'for-looper' %}">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<article id="article-{{ article.id }}" class="article clearfix {% include 'for-looper' %}">
 
   <!-- Article meta
   ============================================= -->
@@ -17,19 +18,7 @@
     </li>
 
     <!-- Author -->
-    <li class="author">
-      {% if article.user.email.size > 0 %}
-      <div class="avatar-wrap">
-        {% if article.user.homepage.size > 0 %}<a href="{{ article.user.homepage }}">{% endif %}
-        <img alt="{% comment %}ly_i18n_replace_for_[ 'blogs.article_item.post_author' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.article_item.post_author' | t }}{% endcapture %}{% include 'ly-static-string' with '9617060' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" class="avatar" src="//www.gravatar.com/avatar/{{ article.user.email | remove: ' ' | strip_newlines | downcase | md5 }}" />
-        {% if article.user.homepage.size > 0 %}</a>{% endif %}
-      </div>
-      {% endif %}
-      <label>{% comment %}ly_i18n_replace_for_[ 'blogs.article_item.written_by' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.article_item.written_by' | t }}{% endcapture %}{% include 'ly-static-string' with '9617061' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
-      <span class="text">{{ article.user.name }}</span>
-    </li>
 
-    {% if article.tags.size > 0 %}
     <!-- Author -->
     <li class="tags">
       <label>{% comment %}ly_i18n_replace_for_[ 'blogs.article_item.filed_under' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.article_item.filed_under' | t }}{% endcapture %}{% include 'ly-static-string' with '9617062' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
@@ -137,18 +126,7 @@
       <ul class="meta mobile clearfix">
 
         <!-- Author -->
-        <li class="author">
-          {% if article.user.email.size > 0 %}
-          <div class="avatar-wrap">
-            {% if article.user.homepage.size > 0 %}<a href="{{ article.user.homepage }}">{% endif %}
-            <img alt="{% comment %}ly_i18n_replace_for_[ 'blogs.article_item.post_author' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.article_item.post_author' | t }}{% endcapture %}{% include 'ly-static-string' with '9617060' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" class="avatar" src="//www.gravatar.com/avatar/{{ article.user.email | remove: ' ' | strip_newlines | downcase | md5 }}" />
-            {% if article.user.homepage.size > 0 %}</a>{% endif %}
-          </div>
-          {% endif %}
-          <label>{% comment %}ly_i18n_replace_for_[ 'blogs.article_item.written_by' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.article_item.written_by' | t }}{% endcapture %}{% include 'ly-static-string' with '9617061' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
-          <span class="text">{{ article.user.name }}</span>
-        </li>
-        {% if article.tags.size > 0 %}
+
 
         <!-- Tags -->
         <li class="tags">

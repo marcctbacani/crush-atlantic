@@ -32,12 +32,13 @@
         </li>
       {% endif %}
     {% comment %}
-    <li class="nav-item ly">
-      <select id="ly-languages-switcher" class="ly-languages-switcher ly-compact">
-        {% for language in shop.metafields.languages %}{% assign key = language | first %}{% assign value = language | last %}{% if key != "default" %}<option value="{{ key }}">{{ value }}</option>{% endif %}{% endfor %}
-      </select>
-    </li>
+      <li class="nav-item ly">
+        <select id="ly-languages-switcher" class="ly-languages-switcher ly-compact">
+          {% for language in shop.metafields.languages %}{% assign key = language | first %}{% assign value = language | last %}{% if key != "default" %}<option value="{{ key }}">{{ value }}</option>{% endif %}{% endfor %}
+        </select>
+      </li>
     {% endcomment %}
+
 
     {% if shop.customer_accounts_enabled %}
       <li class="nav-item account">
