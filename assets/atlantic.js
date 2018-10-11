@@ -13804,7 +13804,7 @@ function __guardMethod__(obj, methodName, transform) {
   }
 }
 
-function twitterSharing() {
+/*function twitterSharing() {
   return !function (d, s, id) {
     var js = undefined;
     var twitterjs = d.getElementsByTagName(s)[0];
@@ -13821,8 +13821,7 @@ function twitterSharing() {
       });
     }
   }(document, 'script', 'twitter-wjs');
-}
-
+} 
 function googlePlusSharing() {
   return !function (d, s, id) {
     var js = undefined;
@@ -13837,7 +13836,8 @@ function googlePlusSharing() {
       return;
     }
   }(document, 'script', 'google-wjs');
-}
+} */
+
 
 /*
  * decaffeinate suggestions:
@@ -13981,12 +13981,12 @@ var Product = function () {
     this.window.on('shopify-variants:switch-variant.product', function (event, data) {
       return _this._onVariantSwitch(data.product, data.variant);
     });
-
+/*
     this.setupVariants();
 
     twitterSharing();
     googlePlusSharing();
-
+*/
     this.fullscreenViewer.find('.showcase .container').spin('small');
 
     if (this.data.thumbOrientation === 'list') {
@@ -14790,6 +14790,8 @@ var DynamicSlideshow = function () {
   return DynamicSlideshow;
 }();
 
+
+
 var twitterFetcher_min = createCommonjsModule(function (module, exports) {
 /*********************************************************************
 *  #### Twitter Post Fetcher v17.0.3 ####
@@ -14800,7 +14802,7 @@ var twitterFetcher_min = createCommonjsModule(function (module, exports) {
 *  http://www.jasonmayes.com/projects/twitterApi/
 *  Github: https://github.com/jasonmayes/Twitter-Post-Fetcher
 *  Updates will be posted to this site.
-*********************************************************************/
+********************************************************************
 (function(root,factory){if(typeof undefined==='function'&&undefined.amd){undefined([],factory);}else {module.exports=factory();}}(commonjsGlobal,function(){var domNode='';var maxTweets=20;var parseLinks=true;var queue=[];var inProgress=false;var printTime=true;var printUser=true;var formatterFunction=null;var supportsClassName=true;var showRts=true;var customCallbackFunction=null;var showInteractionLinks=true;var showImages=false;var useEmoji=false;var targetBlank=true;var lang='en';var permalinks=true;var dataOnly=false;var script=null;function handleTweets(tweets){if(customCallbackFunction===null){var x=tweets.length;var n=0;var element=document.getElementById(domNode);var html='<ul>';while(n<x){html+='<li>'+tweets[n]+'</li>';n++;}
 html+='</ul>';element.innerHTML=html;}else{customCallbackFunction(tweets);}}
 function strip(data){return data.replace(/<b[^>]*>(.*?)<\/b>/gi,function(a,s){return s;}).replace(/class="(?!(tco-hidden|tco-display|tco-ellipsis))+.*?"|data-query-source=".*?"|dir=".*?"|rel=".*?"/gi,'');}
@@ -14918,7 +14920,7 @@ var DynamicTwitter = function () {
   }]);
   return DynamicTwitter;
 }();
-
+*/
 var DynamicVideo = function () {
   function DynamicVideo(section) {
     var _this = this;

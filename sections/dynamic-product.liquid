@@ -1,4 +1,5 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% assign product = all_products[section.settings.product] %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% assign product = all_products[section.settings.product] %}
 {% assign add_to_cart_text = 'products.product.add_to_cart' | t %}
 {% assign enable_history = false %}
 
@@ -96,34 +97,36 @@
 
           <span class="money">{{ productPrice | money }}</span>
         </p>
+        {% comment %}
+          <div
+            class="
+              share-buttons
+              {% unless showShareButtons %}
+                hide-share-buttons
+              {% endunless %}
+            "
+          >
 
-        <div
-          class="
-            share-buttons
-            {% unless showShareButtons %}
-              hide-share-buttons
-            {% endunless %}
-          "
-        >
-          <div class="share-wrap twitter">
-            <a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-text="{{ langify_shop_name }} | {{ productTitle }}:" data-via="{{ settings.twitter-url | split: 'twitter.com/' | last }}"><ly-as-9616999>Tweet</ly-as-9616999></a>
-          </div>
+          
+            <div class="share-wrap twitter">
+              <a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-text="{{ langify_shop_name }} | {{ productTitle }}:" data-via="{{ settings.twitter-url | split: 'twitter.com/' | last }}"><ly-as-9616999>Tweet</ly-as-9616999></a>
+            </div>
 
-          <div class="share-wrap google">
-            <div class="g-plusone" data-size="medium" data-annotation="none"></div>
-          </div>
+            <div class="share-wrap google">
+              <div class="g-plusone" data-size="medium" data-annotation="none"></div>
+            </div>
 
-          <div class="share-wrap pinterest">
-            <a href="//pinterest.com/pin/create/button/?url={{ shop.url }}{{ productUrl }}&amp;media={{ product.featured_image | product_img_url: 'original' }}&amp;description={{ productTitle | escape }}" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
-            <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
-          </div>
+            <div class="share-wrap pinterest">
+              <a href="//pinterest.com/pin/create/button/?url={{ shop.url }}{{ productUrl }}&media={{ product.featured_image | product_img_url: 'original' }}&description={{ productTitle | escape }}" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+              <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+            </div>
 
-          <div class="share-wrap facebook">
-            <div class="fb-like" data-href="{{ shop.url }}{{ productUrl }}" data-send="false" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+            <div class="share-wrap facebook">
+              <div class="fb-like" data-href="{{ shop.url }}{{ productUrl }}" data-send="false" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+            </div>
           </div>
         </div>
-      </div>
-
+      {% endcomment %}
       <div class="featured-product-container">
         <div class="showcase product-images" data-thumb-orientation="{{ thumbOrientation }}">
           {% if thumbOrientation == 'list' %}
@@ -262,34 +265,34 @@
             </div>
 
             {{ settings.section.social-sharing-buttons }}
+            {% comment %}
+              <div
+                class="
+                  module
+                  share-buttons
+                  {% unless showShareButtons %}
+                    hide-share-buttons
+                  {% endunless %}
+                "
+              >
+                <div class="share-wrap twitter">
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-text="{{ langify_shop_name }} | {{ productTitle }}:" data-via="{{ settings.twitter-url | split: 'twitter.com/' | last }}"><ly-as-9616999>Tweet</ly-as-9616999></a>
+                </div>
 
-            <div
-              class="
-                module
-                share-buttons
-                {% unless showShareButtons %}
-                  hide-share-buttons
-                {% endunless %}
-              "
-            >
-              <div class="share-wrap twitter">
-                <a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-text="{{ langify_shop_name }} | {{ productTitle }}:" data-via="{{ settings.twitter-url | split: 'twitter.com/' | last }}"><ly-as-9616999>Tweet</ly-as-9616999></a>
+                <div class="share-wrap google">
+                  <div class="g-plusone" data-size="medium" data-annotation="none"></div>
+                </div>
+
+                <div class="share-wrap pinterest">
+                  <a href="//pinterest.com/pin/create/button/?url={{ shop.url }}{{ productUrl }}&media={{ product.featured_image | product_img_url: 'original' }}&description={{ productTitle | escape }}" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
+                  <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+                </div>
+
+                <div class="share-wrap facebook">
+                  <div class="fb-like" data-href="{{ shop.url }}{{ productUrl }}" data-send="false" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+                </div>
               </div>
-
-              <div class="share-wrap google">
-                <div class="g-plusone" data-size="medium" data-annotation="none"></div>
-              </div>
-
-              <div class="share-wrap pinterest">
-                <a href="//pinterest.com/pin/create/button/?url={{ shop.url }}{{ productUrl }}&media={{ product.featured_image | product_img_url: 'original' }}&description={{ productTitle | escape }}" data-pin-do="buttonPin" data-pin-config="none"><img src="//assets.pinterest.com/images/pidgets/pin_it_button.png" /></a>
-                <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
-              </div>
-
-              <div class="share-wrap facebook">
-                <div class="fb-like" data-href="{{ shop.url }}{{ productUrl }}" data-send="false" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
-              </div>
-            </div>
-
+            {% endcomment %}
             <div class="module options {% unless product.available %}unavailable{% endunless %}">
 
               {% if product != blank and product.available %}
