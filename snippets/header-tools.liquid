@@ -81,9 +81,11 @@
                   <a class="{% if imageBorders %}overlay{% endif %}" href="{{ item.url }}"></a>
                 </div>
                 <div class="details">
+                  {% comment %}
                   {% if brandNames %}
                     <p class="brand">{{ item.vendor | link_to_vendor }}</p>
                   {% endif %}
+                  {% endcomment %}
                   <p class="title"><a href="{{ item.url }}">{% comment %}ly_code_replace_for_[ item.product.title ]_begin{% endcomment %}{% include 'ly-title' with item.product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a><span class="quantity">× <span class="count">{{ item.quantity }}</span></span></p>
                   <p class="price"><span class="money">{{ item.line_price | money }}</span></p>
                   {% unless item.variant.title == 'Default Title' %}<p class="variant">{% comment %}ly_code_replace_for_[ item.variant.title ]_begin{% endcomment %}{% include 'ly-title' with item.variant %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</p>{% endunless %}
