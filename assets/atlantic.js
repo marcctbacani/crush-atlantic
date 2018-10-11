@@ -13803,7 +13803,7 @@ function __guardMethod__(obj, methodName, transform) {
     return undefined;
   }
 }
-
+/*
 function twitterSharing() {
   return !function (d, s, id) {
     var js = undefined;
@@ -13838,7 +13838,7 @@ function googlePlusSharing() {
     }
   }(document, 'script', 'google-wjs');
 }
-
+*/
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
@@ -13983,10 +13983,10 @@ var Product = function () {
     });
 
     this.setupVariants();
-
+/*
     twitterSharing();
     googlePlusSharing();
-
+*/
     this.fullscreenViewer.find('.showcase .container').spin('small');
 
     if (this.data.thumbOrientation === 'list') {

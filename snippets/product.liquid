@@ -1,4 +1,5 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% assign fitting_guide_icon = fitting_guide_icon | default: blank %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% assign fitting_guide_icon = fitting_guide_icon | default: blank %}
 {% assign fitting_guide_url = fitting_guide_url | default: blank %}
 {% assign lazy_load = lazy_load | default: false %}
 {% assign show_brand_names = show_brand_names | default: false %}
@@ -28,7 +29,7 @@
 
       <span class="money">{{ selected_variant.price | money }}</span>
     </p>
-
+{% comment %}
     <div class="share-buttons">
       <div class="share-wrap twitter">
         <a
@@ -65,7 +66,10 @@
         </div>
       </div>
     </div>
+    
+  {% endcomment %}
   </div>
+
 
   <div class="showcase product-images">
     {% if thumb_orientation == 'list' %}
@@ -216,7 +220,7 @@
           <span class="money">{{ selected_variant.price | money }}</span>
         </p>
       </div>
-
+{% comment %}
       <div class="module share-buttons">
         <div class="share-wrap twitter">
           <a
@@ -253,7 +257,7 @@
           </div>
         </div>
       </div>
-
+{% endcomment %}
       <div class="module options {% unless product.available %}unavailable{% endunless %}">
         {% assign form_id = product.id %}
 
